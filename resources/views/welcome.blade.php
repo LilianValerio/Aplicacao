@@ -2,40 +2,24 @@
 <head>
     <title>Lectio</title>
  
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
- 
+    <link rel="stylesheet" href="<?php echo asset('css/estilodoformulario.css')?>" type="text/css">
 </head>
 <body>
- 
-<div class="container">
- 
-    <h1>Lectio</h1>
- 
-    <hr />
- 
-    <form action="/enviar" method="POST">
-      <input type="hidden" name="_token" value="{{ csrf_token() }}">
- 
-      <div class="form-group">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" class="form-control" placeholder="Nome">
-      </div>
- 
-      <div class="form-group">
-        <label for="email">E-Mail</label>
-        <input type="text" id="email" name="email" class="form-control" placeholder="E-Mail">
-      </div>
- 
-      <div class="form-group">
-        <textarea id="mensagem" name="mensagem" class="form-control" placeholder="Digite sua mensagem"></textarea>
-      </div>
- 
-      <button type="submit" class="btn btn-default">Enviar</button>
- 
-    </form>
- 
-</div>
- 
+<meta charset="utf-8"/>
+	<title>Login</title>
+			<fieldset id="teladelogin">
+        		<div class="campo">
+                  <label for="email">E-mail</label>
+                  <input type="text" id="email" name="email" style="width: 20em" value="" placeholder="exemplo@dominion.com">
+              </div>
+              <div class="campo">
+                  <label for="senha">Senha</label>
+                  <input type="password" id="senha" name="senha" style="width: 20em" value="">
+              </div>
+              <div class="campo">
+        			<button type="submit" name="Login">Logar</button>
+              <button type="submit" name="NovoCadastro">Novo Cadastro</button>
+              </div>
+    		</fieldset>
 </body>
 </html>
