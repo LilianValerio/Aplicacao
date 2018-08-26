@@ -1,25 +1,39 @@
-<html>
-<head>
-    <title>Lectio</title>
- 
-    <link rel="stylesheet" href="<?php echo asset('css/estilodoformulario.css')?>" type="text/css">
-</head>
-<body>
-<meta charset="utf-8"/>
-	<title>Login</title>
-			<fieldset id="teladelogin">
-        		<div class="campo">
-                  <label for="email">E-mail</label>
-                  <input type="text" id="email" name="email" style="width: 20em" value="" placeholder="exemplo@dominion.com">
-              </div>
-              <div class="campo">
-                  <label for="senha">Senha</label>
-                  <input type="password" id="senha" name="senha" style="width: 20em" value="">
-              </div>
-              <div class="campo">
-        			<button type="submit" name="Login">Logar</button>
-              <button type="submit" name="NovoCadastro">Novo Cadastro</button>
-              </div>
-    		</fieldset>
-</body>
-</html>
+<!DOCTYPE html>
+	<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Lectio</title>
+		
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+	</head>
+	<body>
+
+		<title>Login</title>
+
+		<div class="jumbotron-login">
+			<h1>Login</h1>
+
+			<div class="formulario">
+				<form action="">
+					<div class="form-group">
+						<label for="">E-mail</label>
+						<input type="text" placeholder="E-mail">
+					</div>
+					<div class="form-group">
+						<label for="">Senha</label>
+						<input type="password" placeholder="Senha">
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn">Acessar</button>
+					</div>
+				</form>
+			</div>
+			<div class="link">
+				<a href="cadastro.php">Novo Cadastro</a>
+				<a href="password.php">Recuperar Senha</a>
+			</div><!-- /.link -->
+		</div><!-- /.jumbotron -->
+	</body>
+	</html>
+

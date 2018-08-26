@@ -1,71 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-	<meta charset="utf-8"/>
-	<title>Cadastro Sinestesi</title>
-	<link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
-	<link rel="stylesheet" type="text/css" href="_css/estilodoformulario.css"/>
-	<body>
-		<form name="signup" method="post" action="cadastrando.php">
-			<fieldset id="formulario" >
-        		<fieldset class="grupo">
-            		<div class="campo">
-              	  		<label for="nome">Nome</label>
-                		<input type="text" id="nome" name="nome" style="width: 10em" value="">
-            		</div>
-            		<div class="campo">
-                		<label for="snome">Sobrenome</label>
-                		<input type="text" id="snome" name="snome" style="width: 10em" value="">
-            		</div>
-       		 	</fieldset>
-       		 	<fieldset>
-       		 		<div class="campo">
-        	    		<label>Sexo</label>
-          		  		<label>
-                		<input type="radio" name="sexo" value="masculino"> Masculino
-            			</label>
-            			<label>
-               	 		<input type="radio" name="sexo" value="feminino"> Feminino
-            			</label>
-        			</div>
-        			<div class="campo">
-            			<label for="email">E-mail</label>
-            			<input type="text" id="email" name="email" style="width: 20em" value="" placeholder="exemplo@dominion.com">
-        			</div>
-        			<div class="campo">
-            			<label for="senha">Senha</label>
-            			<input type="password" id="senha" name="senha" style="width: 20em" value="">
+  <html lang="pt-br">
+  <head>
+  	<meta charset="utf-8"/>
+  	<title>Cadastro Sinestesi</title>
+  	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+  	<body>
+      <div class="content-form">
+       <div class="jumbotron">
+        <h1>Cadastro de usuário</h1>
+        <div class="formulario"
+        <form name="signup" method="post" action="cadastrando.php">
+          <div class="form-group">
+            <label for="">Nome</label>
+            <input type="text" placeholder="Nome">  
+          </div>
+          <div class="form-group">
+            <label for="">Sobrenome</label>
+            <input type="text" placeholder="Sobrenome">  
+          </div>
+          <div class="form-group">
+            <label for="">Sexo</label>
+            <div class="radio">
+              <input type="radio" name="sexo" value="masculino"> Masculino
+              <input type="radio" name="sexo" value="feminino"> Feminino
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="">E-mail</label>
+            <input type="text" placeholder="E-mail">  
+          </div>
 
-        			</div>
-        			<div class="campo">
-            			<label for="telefone">Telefone</label>
-            			<input type="text" id="telefone" name="telefone" style="width: 10em" value="">
-        			</div>
-        		</fieldset>
-       		 	<fieldset class="grupo">
-            		<div class="campo">
-                		<label for="cidade">Cidade</label>
-                		<input type="text" id="cidade" name="cidade" style="width: 10em" value="">
-            		</div>
-           			<div class="campo">
-                		<label for="estado">Estado</label>
-                		<select name="estado" id="estado">
-                  		  <option value="">--</option>
-                   		 <option value="PR">PR</option>
-                   		 <option value="PE">PE</option>
-                   		 <option value="AP">AP</option>
-                   		 <option value="BA">BA</option>
-                   		 <option value="DF">DF</option>
-                   		 <option value="GO">GO</option>
-                   		 <option value="MG">MG</option>
-                		</select>
-           			 </div>
-        		</fieldset>
-        			  <div class="campo">
-              <button type="submit" name="Login">Cadastrar</button>
-              <button type="submit" name="NovoCadastro">Voltar</button>
-              </div>
-    		</fieldset>
-		</form>
-	</body>
+          <div class="col-50">
+            <div class="form-group">
+              <label for="">Senha</label>
+              <input type="text" placeholder="Senha">  
+            </div>
+          </div>
+          <div class="col-50-2">
+            <div class="form-group">
+              <label for="">Telefone</label>
+              <input type="text" placeholder="Telefone">  
+            </div>
+          </div>
+
+          <div class="col-70">
+            <div class="form-group">
+              <label for="">Cidade</label>
+              <input type="text" placeholder="Cidade">  
+            </div>
+          </div>
+          <div class="col-30">
+
+            <div class="form-group">
+              <label for="">Estado</label>
+              <select name="estado" id="estado">
+                <option value="">--</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="AP">AP</option>
+                <option value="BA">BA</option>
+                <option value="DF">DF</option>
+                <option value="GO">GO</option>
+                <option value="MG">MG</option>
+              </select> 
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-50">
+              <button class="btn">Cadastrar</button>
+            </div>  
+
+            <div class="col-50-2">
+              <a href="login.html" class="btn">Voltar</a>
+            </div>
+          </div>
+        </form>
+      </div><!-- /.formluario -->
+    </div><!-- /.jumbotron -->
+  </div><!-- /.content-form -->
+</body>
 </html>
