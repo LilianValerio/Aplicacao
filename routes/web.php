@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/enviar', function(Illuminate\Http\Request $request){
-	var_dump($request->all());
+$this->get('user', function(){
+    return 'Olá, user!';
 });

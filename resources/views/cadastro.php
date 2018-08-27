@@ -2,16 +2,16 @@
   <html lang="pt-br">
   <head>
   	<meta charset="utf-8"/>
-  	<title>Cadastro Sinestesi</title>
+  	<title>Cadastro Synestesis</title>
   	<link rel="stylesheet" type="text/css" href="css/style.css"/>
   	<body>
       <div class="content-form">
        <div class="jumbotron">
         <h1>Cadastro de usuário</h1>
         <div class="formulario"
-        <form name="signup" method="post" action="cadastrando.php">
+        <form name="signup">
           <div class="form-group">
-            <label for="">Nome</label>
+            <label for="" name >Nome</label>
             <input type="text" placeholder="Nome">  
           </div>
           <div class="form-group">
