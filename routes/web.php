@@ -11,10 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::resources([
+    'logar' => 'LogarController',
+    'posts' => 'PostController',
+    'usuario' => 'UsuariosController'
+]);
+
+Route::get('/home', function () {
+    return view('home');
 });
 
-$this->get('user', function(){
-    return 'Olá, user!';
-});
+Route::get('cadastro', function () {
+    return view('Cadastro');
+})->name('jfshf');
+
+Route::post('cadastro','LogarController@direcionar')->name('novoCadastro');
+

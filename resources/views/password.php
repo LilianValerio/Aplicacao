@@ -6,6 +6,7 @@
     <title>Lectio</title>
 
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="icon" href="css/favicon.ico" type="imagem/x-ícone">
   </head>
   <body>
 
@@ -17,8 +18,8 @@
     <div class="formulario">
       <form action="">
         <div class="form-group">
-          <label for="">Endereço de e-mail:</label>
-          <input type="text" placeholder="">
+          <label for=""></label>
+          <input type="text" placeholder="Insira seu e-mail" name="email">
         </div>
         <div class="form-group">
           <button type="submit" class="btn">Redefinir senha</button>

@@ -9,7 +9,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Tusuario;
 
-class UsuariosController extends Controller
+class UsuariosController
 {
     
     public function index (){
