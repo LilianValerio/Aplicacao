@@ -28,8 +28,8 @@
 				</form>
 			</div>
 			<div class="link">
-			<a href="{#}" action = "{{ route('novoCadastro') }}">Novo Cadastro</a>
-				<a href="password.html">Recuperar Senha</a>
+			<a href="cadastro">Novo Cadastro</a>
+			<a href="password">Recuperar Senha</a>
 			</div><!-- /.link -->
 		</div><!-- /.jumbotron -->
 	

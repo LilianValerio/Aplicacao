@@ -24,7 +24,8 @@ Route::get('/home', function () {
 
 Route::get('cadastro', function () {
     return view('Cadastro');
-})->name('jfshf');
+});
 
-Route::post('cadastro','LogarController@direcionar')->name('novoCadastro');
-
+Route::get('password', function () {
+    return view('password');
+});
