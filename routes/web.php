@@ -33,3 +33,15 @@ Route::get('password', function () {
 Route::get('logar', function () {
     return view('login');
 });
+
+Route::get('paciente', function () {
+    return view('GerenciarPacientes');
+});
+
+Route::get('dependente', function () {
+    return view('GerenciarDependentes');
+});
+
+Route::get('profissional', function () {
+    return view('GerenciarProfissionais');
+});

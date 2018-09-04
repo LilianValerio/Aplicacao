@@ -27,7 +27,7 @@
       </form>
     </div>
     <div class="link">
-      <a href="cadastro.html">Novo Cadastro</a>
+      <a href="cadastro">Novo Cadastro</a>
       <a href="logar">Acessar</a>
     </div><!-- /.link -->
   </div>
