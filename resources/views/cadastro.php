@@ -103,7 +103,7 @@
            
           <div class="form-group">
             <div class="col-50">
-              <a href="login.html" class="btn">Voltar</a>
+              <a href="logar" class="btn">Voltar</a>
             </div>
 
             <div class="col-50-2">

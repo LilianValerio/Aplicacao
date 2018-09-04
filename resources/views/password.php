@@ -28,7 +28,7 @@
     </div>
     <div class="link">
       <a href="cadastro.html">Novo Cadastro</a>
-      <a href="login.html">Acessar</a>
+      <a href="logar">Acessar</a>
     </div><!-- /.link -->
   </div>
   </div><!-- /.jumbotron -->

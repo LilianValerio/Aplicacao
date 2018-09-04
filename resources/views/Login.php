@@ -23,7 +23,7 @@
 						<input type="password" placeholder="Senha" name="senha">
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn">Acessar</button>
+					<a href="home" class="btn">Acessar</a>
 					</div>
 				</form>
 			</div>

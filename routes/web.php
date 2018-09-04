@@ -29,3 +29,7 @@ Route::get('cadastro', function () {
 Route::get('password', function () {
     return view('password');
 });
+
+Route::get('logar', function () {
+    return view('login');
+});
