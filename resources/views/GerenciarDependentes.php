@@ -7,6 +7,7 @@
   <title>Tela_adm</title>
   
 	  <link rel="stylesheet" type="text/css" href="css/style.css">
+	  <link rel="icon" href="css/favicon.ico" type="imagem/x-ícone">
   </head>
 <body>
   <div class="logo"></div>
