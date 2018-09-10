@@ -38,10 +38,14 @@ Route::get('paciente', function () {
     return view('GerenciarPacientes');
 });
 
-Route::get('dependente', function () {
-    return view('GerenciarDependentes');
+Route::get('cadastrodependente', function () {
+    return view('CadastroDependente');
 });
 
-Route::get('profissional', function () {
-    return view('GerenciarProfissionais');
+Route::get('cadastroprofissional', function () {
+    return view('CadastroProfissional');
 });
+
+
+
+
