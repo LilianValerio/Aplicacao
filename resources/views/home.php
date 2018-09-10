@@ -4,31 +4,39 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Lectio</title>
-		
-		<link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="icon" href="css/favicon.ico" type="imagem/x-ícone">
-	</head>
-	<body>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="icon" href="img/favicon.ico" type="imagem/x-ícone">
+  </head>
+  <body>
 
-    <div class="jumbotron jumbotron-fluid">
-      <div class="nav-1">
-        <a href="#">Home</a>
+    <div class="container">
+
+     <div class="row">
+        <div class="col-md-12">
+        <nav class="menu">
+         <div class="menu-content">
+            <div class="nav-1">
+            <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
+          </div>
+          <div class="nav-2">
+            <a href="#" class="hidden-xs">Usuário: Zeca</a>
+            <a href="#"><i class="glyphicon glyphicon-log-out"></i> Sair</a>
+          </div>
+         </div>
+        </nav>
       </div>
-      <div class="nav-2">
-        <a href="#">Menu 1</a>
-        <a href="#">Sair</a>
+     </div>
+
+      <div class="col-md-5 nav-home">
+        <a href="#" class="btn btn-primary">Gerenciar Paciente</a>
+        <a href="#" class="btn btn-primary">Gerenciar Dependente</a>
+        <a href="#" class="btn btn-primary">Gerenciar Profissional</a>
+        <a href="#" class="btn btn-primary">Relatório</a>    
+        <a href="#" class="btn btn-primary">Atividades </a>
       </div>
-    </div>
+    </div><!-- /.container -->
 
-<div class="container">
-  <div class="btn-group btn-group-lg">
-    <button type="button" class="btn btn-primary"><a href="#">Cadastrar Paciente</a></button>
-    <button type="button" class="btn btn-primary"><a href="#">Cadastrar Dependente</a></button>
-     <button type="button" class="btn btn-primary"><a href="#">Visualizar Paciente</a></button>
-    <button type="button" class="btn btn-primary"><a href="#">Visualizar Dependente</a></button>
-    <button type="button" class="btn btn-primary"><a href="#">Visualizar Profissional</a></button>
-    <button type="button" class="btn btn-primary"><a href="#">Relatório</a></button>
-  </div>
-
-</body>
-</html>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+  </html>
