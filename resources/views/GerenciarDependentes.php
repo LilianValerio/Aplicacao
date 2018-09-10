@@ -2,75 +2,95 @@
 <html lang="pt-br">
 <head>
 	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tela_adm</title>
-  
-	  <link rel="stylesheet" type="text/css" href="css/style.css">
-	  <link rel="icon" href="css/favicon.ico" type="imagem/x-ícone">
-  </head>
+ <title>Dependentes</title>
+
+ <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="css/style.css">
+ <link rel="icon" href="img/favicon.ico" type="imagem/x-ícone">
+</head>
 <body>
-  <div class="logo"></div>
+  <div class="container">
 
-<div class="jumbotron-table">
-<div class="form-group pull-right">
-<h1>Dependentes</h1>
-    <input type="text" class="search form-control" placeholder="O que você está procurando?">
-</div>
+    <div class="logo"></div>
 
-   
-<div class="table-responsive">
-  <table class="table-striped">
-  <thead>
-    <tr>
-      <th class="table-old">#</th>
-      <th class="col">Id</th>
-      <th class="col">Nome</th>
-      <th class="col">Perfil</th>
-      <th class="col">Data do Cadastro</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-  	<tr>
-      <th>3</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-    </tr>
-   
-  </tbody>
-</table>
-</div>
-</div>
+    <div class="jumbotron-table">
+      <h1>Dependentes</h1>
 
-<div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-secondary">Voltar</button>
-  <button type="button" class="btn btn-secondary">Salvar</button>
-  <button type="button" class="btn btn-secondary">Excluir</button>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+        <div class="form-group">
+          <form action="">
+            <input type="text" class="search form-control" placeholder="O que você está procurando?">
+            <button type="submit" class="btn-search"><i class="glyphicon glyphicon-search"></i> Pesquisar</button>
+          </form>
+        </div>
+      </div>
+      
+      </div>  
+
+
+        <div class="table-rolagem">
+          <table class="table table-hover table-responsive">
+          <thead>
+            <tr>
+              <th class="table-old">#</th>
+              <th class="table-id">Id</th>
+              <th class="table-nome">Nome</th>
+              <th class="table-perfil">Perfil</th>
+              <th class="table-data">Data do Cadastro</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
+               <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>  <tr>
+              <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
+               <td></td>
+              <td> </td>
+              <td></td>
+              <td></td>
+            </tr>  <tr>
+              <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
+               <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>  <tr>
+              <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
+               <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+
+          </tbody>
+        </table>
+        </div>
+    </div>
+ 
+<div class="content-buttons" role="group" aria-label="Basic">
+    <button type="button" class="btn btn-secondary">Novo</button>
   <button type="button" class="btn btn-secondary">Editar</button>
+  <button type="button" class="btn btn-secondary">Excluir</button>
+  <button type="button" class="btn btn-secondary">Voltar</button>
 </div>
 
+</div><!-- /.container -->
+
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
