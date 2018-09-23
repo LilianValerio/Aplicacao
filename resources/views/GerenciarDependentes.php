@@ -18,6 +18,20 @@
     <div class="jumbotron-table">
       <h1>Dependentes</h1>
 
+<!-- Filtro de exibição e paginação -->
+    <div class="ls-custom-select">
+      Exibir
+      <select name="" id="" class="ls-select">
+        <option value="10">10</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+       ítens por página
+    </div>
+ 
+
+        <!-- barra de pesquisa-->
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
         <div class="form-group">
@@ -80,6 +94,11 @@
           </tbody>
         </table>
         </div>
+
+       <nav class="pager">
+      <a href="#" class="previous"><span aria-hidden="true">&larr;</span> Anterior</a>
+      <a href="#" class="next">Próximo <span aria-hidden="true">&rarr;</span></a>
+</nav>
     </div>
  
 <div class="content-buttons" role="group" aria-label="Basic">
