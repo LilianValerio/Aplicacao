@@ -29,11 +29,11 @@
      </div>
 
       <div class="col-md-5 nav-home">
-        <a href="#" class="btn btn-primary">Gerenciar Paciente</a>
-        <a href="#" class="btn btn-primary">Gerenciar Dependente</a>
-        <a href="#" class="btn btn-primary">Gerenciar Profissional</a>
+        <a href="gerenciarPacientes" class="btn btn-primary">Gerenciar Paciente</a>
+        <a href="gerenciarDependentes" class="btn btn-primary">Gerenciar Dependente</a>
+        <a href="gerenciarProfissionais" class="btn btn-primary">Gerenciar Profissional</a>
         <a href="#" class="btn btn-primary">Relatório</a>    
-        <a href="#" class="btn btn-primary">Atividades </a>
+        <a href="exercicio" class="btn btn-primary">Atividades </a>
       </div>
     </div><!-- /.container -->
 

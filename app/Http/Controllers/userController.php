@@ -1,8 +1,10 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
-class LogarController 
+class userController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -11,19 +13,8 @@ class LogarController
      */
     public function index()
     {
-        return view('Login');
+        //
     }
-
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function direcionar()
-    {
-        return view('Cadastro');
-    }
-
 
     /**
      * Show the form for creating a new resource.

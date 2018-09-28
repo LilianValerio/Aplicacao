@@ -18,7 +18,11 @@ Route::resources([
     'usuario' => 'UsuariosController'
 ]);
 
-Route::get('/home', function () {
+Route::get('/', function () {
+    return view('Index');
+});
+
+Route::get('home', function () {
     return view('home');
 });
 
@@ -45,6 +49,27 @@ Route::get('cadastrodependente', function () {
 Route::get('cadastroprofissional', function () {
     return view('CadastroProfissional');
 });
+
+Route::get('exercicio', function () {
+    return view('exercicio');
+});
+
+Route::get('gerenciarDependentes', function () {
+    return view('GerenciarDependentes');
+});
+
+
+Route::get('gerenciarPacientes', function () {
+    return view('GerenciarPacientes');
+});
+
+
+Route::get('gerenciarProfissionais', function () {
+    return view('GerenciarProfissionais');
+});
+
+
+
 
 
 
