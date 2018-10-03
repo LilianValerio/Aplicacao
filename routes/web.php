@@ -13,16 +13,14 @@
 
 
 Route::resources([
-    'logar' => 'LogarController',
-    'posts' => 'PostController',
-    'usuario' => 'UsuariosController'
+    'users' => 'UserController'
 ]);
 
 Route::get('/', function () {
     return view('Index');
 });
 
-Route::get('home', function () {
+/* Route::get('home', function () {
     return view('home');
 });
 
@@ -68,7 +66,7 @@ Route::get('gerenciarProfissionais', function () {
     return view('GerenciarProfissionais');
 });
 
-
+*/
 
 
 

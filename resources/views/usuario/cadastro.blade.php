@@ -12,27 +12,21 @@
       <div class="content-form">
        <div class="jumbotron">
         <h1>Cadastro de usuário</h1>
-        <div class="formulario"
-        <form name="signup" method="post" action="cadastrando.php">
+        <div class="formulario">
+        <form  method="post" action="{{url('users')}}" enctype="multipart/formdata">
+        @csrf
           <div class="form-group">
             <label for="">Nome</label>
-            <input class="form-control" type="text" placeholder="Nome" name="nome">  
-          </div>
-          <div class="form-group">
-            <label for="">Sobrenome</label>
-            <input class="form-control" type="text" placeholder="Sobrenome" name="sobre_nome">  
+            <input class="form-control" type="text" placeholder="Nome" name="name">  
           </div>
           <div class="form-group">
             <label for="">Sexo</label>
             <div class="col-md-12 radio">
             <div class="col-md-4">
-                <input class="" type="radio" name="sexo" value="masculino"> Masculino
+                <input class="" type="radio" name="sexo" value="M"> Masculino
               </div>
             <div class="col-md-4">
-                <input class="" type="radio" name="sexo" value="feminino"> Feminino
-              </div>
-            <div class="col-md-4">
-                <input class="" type="radio" name="sexo" value="outros"> Outros
+                <input class="" type="radio" name="sexo" value="F"> Feminino
               </div>
             </div>
           </div>
@@ -45,13 +39,13 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Senha</label>
-                <input class="form-control" type="password" placeholder="Senha" name="senha">  
+                <input class="form-control" type="password" placeholder="Senha" name="password">  
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Telefone</label>
-                <input class="form-control" type="text" placeholder="Telefone" name="fone">  
+                <input class="form-control" type="text" placeholder="Telefone" name="telefone">  
               </div>
             </div>
           </div>
@@ -116,9 +110,8 @@
             <div class="">
               <a href="logar" class="btn">Voltar</a>
             </div>
-
             <div class="">
-              <button class="btn">Cadastrar</button>
+              <button type ="submit" class="btn">Cadastrar</button>
             </div>
           </div>
         </form>
