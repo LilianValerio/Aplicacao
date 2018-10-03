@@ -13,12 +13,14 @@
 
 
 Route::resources([
-    'logar' => 'LogarController',
-    'posts' => 'PostController',
-    'usuario' => 'UsuariosController'
+    'users' => 'UserController'
 ]);
 
-Route::get('/home', function () {
+Route::get('/', function () {
+    return view('Index');
+});
+
+/* Route::get('home', function () {
     return view('home');
 });
 
@@ -38,10 +40,35 @@ Route::get('paciente', function () {
     return view('GerenciarPacientes');
 });
 
-Route::get('dependente', function () {
+Route::get('cadastrodependente', function () {
+    return view('CadastroDependente');
+});
+
+Route::get('cadastroprofissional', function () {
+    return view('CadastroProfissional');
+});
+
+Route::get('exercicio', function () {
+    return view('exercicio');
+});
+
+Route::get('gerenciarDependentes', function () {
     return view('GerenciarDependentes');
 });
 
-Route::get('profissional', function () {
+
+Route::get('gerenciarPacientes', function () {
+    return view('GerenciarPacientes');
+});
+
+
+Route::get('gerenciarProfissionais', function () {
     return view('GerenciarProfissionais');
 });
+
+*/
+
+
+
+
+

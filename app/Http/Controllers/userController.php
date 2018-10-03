@@ -1,8 +1,10 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 
-class LogarController 
+class userController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -11,19 +13,9 @@ class LogarController
      */
     public function index()
     {
-        return view('Login');
+        $users = \App\User::all();
+        return view('usuario.index', compact('users'));
     }
-
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function direcionar()
-    {
-        return view('Cadastro');
-    }
-
 
     /**
      * Show the form for creating a new resource.
@@ -32,7 +24,7 @@ class LogarController
      */
     public function create()
     {
-        //
+       return view ('usuario.cadastro');
     }
 
     /**
@@ -43,7 +35,25 @@ class LogarController
      */
     public function store(Request $request)
     {
-        //
+        $user = new \App\User;
+        
+        $user -> name=$request-> get('name');
+        $user -> email=$request->get('email');
+        $user -> password =$request->get('password');
+        $user -> cpf =$request->get('cpf');
+        $user -> sexo =$request->get('sexo');
+        $user -> perfil =$request->get('perfil');
+        $user -> profissao_id =$request->get('profissao_id');
+        $user -> telefone =$request->get('telefone');
+        $user -> cidade =$request->get('cidade');
+        $user -> estado =$request->get('estado');
+        $user -> disturbio_id =$request->get('disturbio_id');
+        $user -> data_nasc =$request->get('data_nasc');  
+
+        $user->save();
+
+        return redirect('usuario.index')->with('sucess', 'Cadastro Realizado!');
+
     }
 
     /**
