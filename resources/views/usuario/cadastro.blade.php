@@ -95,7 +95,7 @@
           </div>
 
 
-          <div class="">
+      <!--   <div class="">
             <div class="form-group">
               <label for="">Tipo de Usuário</label>
               <select class="form-control" name="usuario" id="usuario">
@@ -104,11 +104,11 @@
                 <option value="">Profissional</option> 
               </select>  
             </div>
-          </div>
+          </div> -->
 
           <div class="form-group">
             <div class="">
-              <a href="logar" class="btn">Voltar</a>
+              <a href="index" class="btn">Voltar</a>
             </div>
             <div class="">
               <button type ="submit" class="btn">Cadastrar</button>

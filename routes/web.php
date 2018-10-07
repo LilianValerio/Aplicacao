@@ -13,62 +13,30 @@
 
 
 Route::resources([
-    'users' => 'UserController'
+    'users' => 'UserController', 
+    'dependentes' => 'userDependenteController'
 ]);
 
 Route::get('/', function () {
     return view('Index');
 });
 
-/* Route::get('home', function () {
-    return view('home');
-});
-
 Route::get('cadastro', function () {
-    return view('Cadastro');
+    return view('usuario.Cadastro');
 });
 
-Route::get('password', function () {
-    return view('password');
+Route::get('home', function () {
+    return view('home_user');
 });
 
-Route::get('logar', function () {
-    return view('login');
-});
-
-Route::get('paciente', function () {
-    return view('GerenciarPacientes');
+Route::get('index', function () {
+    return view('Index');
 });
 
 Route::get('cadastrodependente', function () {
-    return view('CadastroDependente');
-});
-
-Route::get('cadastroprofissional', function () {
-    return view('CadastroProfissional');
-});
-
-Route::get('exercicio', function () {
-    return view('exercicio');
+    return view('dependente.CadastroDependente');
 });
 
 Route::get('gerenciarDependentes', function () {
-    return view('GerenciarDependentes');
+    return view('dependente.GerenciarDependentes');
 });
-
-
-Route::get('gerenciarPacientes', function () {
-    return view('GerenciarPacientes');
-});
-
-
-Route::get('gerenciarProfissionais', function () {
-    return view('GerenciarProfissionais');
-});
-
-*/
-
-
-
-
-

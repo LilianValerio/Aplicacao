@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class userController extends Controller
+class userDependenteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,7 @@ class userController extends Controller
      */
     public function index()
     {
-        $users = \App\User::all();
-        return view('usuario.index', compact('users'));
+        //
     }
 
     /**
@@ -24,7 +23,7 @@ class userController extends Controller
      */
     public function create()
     {
-       return view ('usuario.cadastro');
+        //
     }
 
     /**
@@ -35,18 +34,15 @@ class userController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new \App\User;
+        $user = new \App\Dependente;
         
         $user -> name=$request-> get('name');
-        $user -> email=$request->get('email');
-        $user -> password =$request->get('password');
         $user -> sexo =$request->get('sexo');
-        $user -> telefone =$request->get('telefone');
-        $user -> cidade =$request->get('cidade');
-        $user -> estado =$request->get('estado');
-
+        $user -> dt_nascimento=$request->get('dt_nascimento');
+        $user -> disturbio_id =$request->get('disturbio_id');
+        $user -> texto_extra =$request->get('texto_extra'); 
         $user->save();
-        return view('home_user')->with('sucess', 'Cadastro Realizado!');
+        return view('gerenciarDependentes');
     }
 
     /**
