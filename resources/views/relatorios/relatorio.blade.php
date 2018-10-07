@@ -17,7 +17,7 @@
     <div class="logo"></div>
 
     <div class="jumbotron-table">
-      <h1>Pacientes</h1>
+      <h1>Relatórios</h1>
 
       <!-- Filtro de exibição e paginação -->
     <div class="ls-custom-select">
@@ -50,27 +50,45 @@
           <table class="table table-hover table-responsive">
           <thead>
             <tr>
-              <th class="table-old">#</th>
-              <th class="table-id">Id</th>
-              <th class="table-nome">Nome</th>
-              <th class="table-perfil">Perfil</th>
-              <th class="table-data">Data do Cadastro</th>
+              <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span> </th>
+              <th class="table-id">Data</th>
+              <th class="table-nome">Nome da Atividade</th>
+              <th class="table-perfil">Hora inicio</th>
+              <th class="table-data">Hora final</th>
+              <th class="table-old-2">Completado</th>
+              <th class="table-old-2">Pontuação</th>
+              <th>Editar</th>
+              <th>Excluir</th>
             </tr>
           </thead>
+
+
           <tbody>
             <tr>
-              <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
-              <td>01</td>
+              <td><input type="checkbox" class="form-check-input" id="Check1"></td>
+              <td>01/10/10</td>
               <td>wendell</td>
               <td>blábláblá</td>
               <td>30/12/18</td>
+              <th></th>
+              <th></th>
+              <td><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
+              <td><p><button class="checkthis" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
             </tr>
+
+
             <tr>
               <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
                 <td>02</td>
               <td>shinobi</td>
               <td>blábláblá</td>
               <td>30/12/18</td>
+              <th></th>
+              <th></th>
+             <td><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
+              <td><button class="checkthis" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
             </tr>  
             <tr>
               <td><input type="checkbox" class="form-check-input" id="Check1"> </td>
@@ -78,13 +96,23 @@
               <td>tingido</td>
               <td>blábláblá</td>
               <td>50/12/15</td>
+              <th></th>
+              <th></th>
+              <td><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
+              <td><button class="checkthis" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
             </tr>  
             <tr>
-              <td><input type="checkbox" class="form-check-input" id="Check1"> </td>
-               <td>04</td>
+              <td><input type="checkbox" class="form-check-input" id="Check1"></td>
+              <td>04</td>
               <td>pitoff</td>
               <td>blábláblá</td>
               <td>01/01/86</td>
+              <th></th>
+              <th></th>
+              <td><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
+              <td><button class="checkthis" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
             </tr> 
              <tr>
               <td><input type="checkbox" class="form-check-input" id="Check1"> </td>
@@ -92,6 +120,11 @@
               <td>falastaço</td>
               <td>blábláblá</td>
               <td>22/11/99</td>
+              <th></th>
+              <th></th>
+              <td><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
+              <td><button class="checkthis" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
             </tr>
          </tbody>
         </table>
@@ -106,13 +139,12 @@
  
 <div class="content-buttons" role="group" aria-label="Basic example">
     <button type="button" class="btn btn-secondary">Novo</button>
-  <button type="button" class="btn btn-secondary">Editar</button>
-  <button type="button" class="btn btn-secondary">Excluir</button>
   <button type="button" class="btn btn-secondary">Voltar</button>
 </div>
 
 </div><!-- /.container -->
-  
+
+
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
 
- <title>Profissionais</title>
+ <title>Dependentes</title>
 
  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
  <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -16,7 +16,7 @@
     <div class="logo"></div>
 
     <div class="jumbotron-table">
-      <h1>Profissionais</h1>
+      <h1>Dependentes</h1>
 
 <!-- Filtro de exibição e paginação -->
     <div class="ls-custom-select">
@@ -29,8 +29,9 @@
       </select>
        ítens por página
     </div>
+ 
 
-<!-- barra de pesquisa-->
+        <!-- barra de pesquisa-->
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
         <div class="form-group">
@@ -48,11 +49,13 @@
           <table class="table table-hover table-responsive">
           <thead>
             <tr>
-              <th class="table-old">#</th>
-              <th class="table-id">Id</th>
+              <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span></th>
+              <th class="table-id"></th>
               <th class="table-nome">Nome</th>
               <th class="table-perfil">Perfil</th>
               <th class="table-data">Data do Cadastro</th>
+              <th class="table-old-2">Editar</th>
+              <th class="table-old-2">Deletar</th>
             </tr>
           </thead>
           <tbody>
@@ -62,6 +65,9 @@
               <td></td>
               <td></td>
               <td></td>
+              <td><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
+              <td><button class="checkthis" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
             </tr>
             <tr>
               <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
@@ -69,24 +75,39 @@
               <td></td>
               <td></td>
               <td></td>
-            </tr>  <tr>
+              <td><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
+              <td><button class="checkthis" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
+            </tr> 
+            <tr>
               <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
-               <td></td>
+              <td></td>
               <td> </td>
               <td></td>
               <td></td>
-            </tr>  <tr>
+              <td><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
+              <td><button class="checkthis" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
+            </tr>  
+            <tr>
               <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
                <td></td>
               <td></td>
               <td></td>
               <td></td>
-            </tr>  <tr>
+              <td><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
+              <td><button class="checkthis" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
+            </tr>  
+            <tr>
               <td> <input type="checkbox" class="form-check-input" id="Check1"> </td>
                <td></td>
               <td></td>
               <td></td>
               <td></td>
+              <td><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
+              <td><button class="checkthis" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
             </tr>
 
 
@@ -100,16 +121,13 @@
 </nav>
     </div>
  
-<div class="content-buttons" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary"> Novo</button>
-  <button type="button" class="btn btn-secondary"> Editar</button>
-  <button type="button" class="btn btn-secondary"> Excluir</button>
-  <button type="button" class="btn btn-secondary"> Voltar</button>
+<div class="content-buttons" role="group" aria-label="Basic">
+    <button type="button" class="btn btn-secondary">Novo</button>
+  <button type="button" class="btn btn-secondary">Voltar</button>
 </div>
 
 </div><!-- /.container -->
 
 <script src="js/bootstrap.min.js"></script>
-
 </body>
 </html>
