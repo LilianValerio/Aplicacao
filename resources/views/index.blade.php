@@ -20,14 +20,14 @@
 
 	<div class="left">
 	    <div class="item active">
-	        <i class="glyphicon glyphicon-home"><a href="home.html"></i> Home</a>
+	        <i class="glyphicon glyphicon-home"></i> Home</a>
 	        	
 	    </div>
 	    <div class="item">
 	        <i class="glyphicon glyphicon-list-alt"></i> Sobre
 	    </div>
 	    <div class="item">
-	        <i class="glyphicon glyphicon-modal-window"></i>Cadastre-se
+	        <i class="glyphicon glyphicon-modal-window"><a href="cadastro"></i>Cadastre-se
 	    </div>
 	    <div class="item">
 	        <i class="glyphicon glyphicon-log-in"></i> Entrar

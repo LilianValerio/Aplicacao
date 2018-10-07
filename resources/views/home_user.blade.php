@@ -16,9 +16,9 @@
 		<h1>Usuário</h1>
 			<div class="row">
 		        <div class="col-md-12">
-				    <a href="home.html" target=""><button class="btn blue-circle-button">Home<span class="blue-circle-greater-than"></span></button></a>
+				    <a href="#" target=""><button class="btn blue-circle-button">Home<span class="blue-circle-greater-than"></span></button></a>
 				    <button class="btn blue-circle-button">Meus Dados<span class="blue-circle-greater-than"></span></button>
-				    <button class="btn blue-circle-button">Dependentes<span class="blue-circle-greater-than"></span></button>
+					<a href="gerenciarDependentes"><button class="btn blue-circle-button">Dependentes<span class="blue-circle-greater-than"></span></button></a>
 		        </div>   
 			</div>
 

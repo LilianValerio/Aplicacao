@@ -122,7 +122,7 @@
     </div>
  
 <div class="content-buttons" role="group" aria-label="Basic">
-    <button type="button" class="btn btn-secondary">Novo</button>
+    <a href = "cadastrodependente" ><button type="button" class="btn btn-secondary">Novo</button></a>
   <button type="button" class="btn btn-secondary">Voltar</button>
 </div>
 
