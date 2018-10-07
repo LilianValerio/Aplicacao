@@ -30,7 +30,7 @@
 	        <i class="glyphicon glyphicon-modal-window"><a href="cadastro"></i>Cadastre-se
 	    </div>
 	    <div class="item">
-	        <i class="glyphicon glyphicon-log-in"><a href="login"></i> Entrar
+	        <i class="glyphicon glyphicon-log-in"></i><a href="login"> Entrar
 	    </div>
 	</div>
 
