@@ -20,7 +20,7 @@
             <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
           </div>
           <div class="nav-2">
-            <a href="#" class="hidden-xs">Usuário: Zeca</a>
+            <a href="#" class="hidden-xs">Usuário: {{auth()->user()->id}}</a>
             <a href="#"><i class="glyphicon glyphicon-log-out"></i> Sair</a>
           </div>
          </div>

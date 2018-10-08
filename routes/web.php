@@ -44,3 +44,7 @@ Route::get('cadastrodependente', function () {
 Route::get('gerenciarDependentes', function () {
     return view('dependente.GerenciarDependentes');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
