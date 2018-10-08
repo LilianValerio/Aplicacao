@@ -25,6 +25,10 @@ Route::get('cadastro', function () {
     return view('usuario.Cadastro');
 });
 
+Route::get('login', function () {
+    return view('usuario.login');
+});
+
 Route::get('home', function () {
     return view('home_user');
 });
