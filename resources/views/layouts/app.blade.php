@@ -21,7 +21,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-                    <ul class="navbar-nav mr-auto">
         <main class="py-4">
             @yield('content')
         </main>
