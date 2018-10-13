@@ -22,11 +22,11 @@ Route::get('/', function () {
 });
 
 Route::get('cadastro', function () {
-    return view('usuario.Cadastro');
+    return view('auth.register');
 });
 
 Route::get('login', function () {
-    return view('usuario.login');
+    return view('auth.login');
 });
 
 Route::get('home', function () {

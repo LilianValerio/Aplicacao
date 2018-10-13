@@ -34,8 +34,9 @@ class userDependenteController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new \App\Dependente;
         
+        $user = new \App\Dependente;
+        $user -> users_id = 3;
         $user -> name=$request-> get('name');
         $user -> sexo =$request->get('sexo');
         $user -> dt_nascimento=$request->get('dt_nascimento');
