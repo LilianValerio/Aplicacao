@@ -22,11 +22,11 @@ Route::get('/', function () {
 });
 
 Route::get('cadastro', function () {
-    return view('usuario.Cadastro');
+    return view('auth.register');
 });
 
 Route::get('login', function () {
-    return view('usuario.login');
+    return view('auth.login');
 });
 
 Route::get('home', function () {
@@ -44,3 +44,7 @@ Route::get('cadastrodependente', function () {
 Route::get('gerenciarDependentes', function () {
     return view('dependente.GerenciarDependentes');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

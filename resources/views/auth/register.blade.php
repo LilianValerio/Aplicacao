@@ -1,3 +1,5 @@
+ @extends('layouts.app')
+@section('content')
   <!DOCTYPE html>
   <html lang="pt-br">
   <head>
@@ -13,11 +15,16 @@
        <div class="jumbotron">
         <h1>Cadastro de usuário</h1>
         <div class="formulario">
-        <form  method="post" action="{{url('users')}}" enctype="multipart/formdata">
-        @csrf
+        <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+          @csrf
           <div class="form-group">
             <label for="">Nome</label>
-            <input class="form-control" type="text" placeholder="Nome" name="name">  
+            <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+            @if ($errors->has('name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
           </div>
           <div class="form-group">
             <label for="">Sexo</label>
@@ -32,16 +39,34 @@
           </div>
           <div class="form-group">
             <label for="">E-mail</label>
-            <input class="form-control" type="text" placeholder="E-mail" name="email">  
+            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+            @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
           </div>
 
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Senha</label>
-                <input class="form-control" type="password" placeholder="Senha" name="password">  
+                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                  </span>
+                                @endif  
               </div>
             </div>
+            <div class="form-group row">
+            <label for="">Confirmar senha</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Telefone</label>
@@ -94,18 +119,6 @@
             </div>
           </div>
 
-
-      <!--   <div class="">
-            <div class="form-group">
-              <label for="">Tipo de Usuário</label>
-              <select class="form-control" name="usuario" id="usuario">
-                  <option value="" disabled="" selected>Selecione</option> 
-                <option value="">Paciente</option>
-                <option value="">Profissional</option> 
-              </select>  
-            </div>
-          </div> -->
-
           <div class="form-group">
             <div class="">
               <a href="index" class="btn">Voltar</a>
@@ -122,3 +135,4 @@
   <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+@endsection

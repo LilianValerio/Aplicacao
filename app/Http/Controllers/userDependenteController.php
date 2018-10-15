@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
 
 class userDependenteController extends Controller
 {
@@ -34,8 +34,13 @@ class userDependenteController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new \App\Dependente;
         
+        if(Auth::check()){ //se tem usuario logado
+            $usuario = Auth()->user()->id();
+        }
+
+        $user = new \App\Dependente;
+        $user -> users_id = $usuario;
         $user -> name=$request-> get('name');
         $user -> sexo =$request->get('sexo');
         $user -> dt_nascimento=$request->get('dt_nascimento');

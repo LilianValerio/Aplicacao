@@ -1,42 +1,47 @@
 <!DOCTYPE html>
-	<html lang="pt-br">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Lectio</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="icon" href="img/favicon.ico" type="imagem/x-ícone">
-  </head>
-  <body>
+			<html lang="pt-br">
+			<head>
+				<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+				<title>Lectio</title>
+				<link rel="stylesheet" href="css/bootstrap.min.css">
+				<link rel="stylesheet" type="text/css" href="css/style.css">
+				<link rel="icon" href="img/favicon.ico" type="imagem/x-ícone">
+			</head>
+			<body>
 
-    <div class="container">
+				<div class="logo"></div>
+	<div class="container">
+		<div class="jumbotron-x1">
+		<h1>{{auth()->user()->name}}</h1>
+			<div class="row">
+		        <div class="col-md-12">
+				    <a href="#" target=""><button class="btn blue-circle-button">Home<span class="blue-circle-greater-than"></span></button></a>
+				    <button class="btn blue-circle-button">Meus Dados<span class="blue-circle-greater-than"></span></button>
+					<a href="gerenciarDependentes"><button class="btn blue-circle-button">Dependentes<span class="blue-circle-greater-than"></span></button></a>
+		        </div>   
+			</div>
 
-     <div class="row">
-        <div class="col-md-12">
-        <nav class="menu">
-         <div class="menu-content">
-            <div class="nav-1">
-            <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
-          </div>
-          <div class="nav-2">
-            <a href="#" class="hidden-xs">Usuário: Zeca</a>
-            <a href="#"><i class="glyphicon glyphicon-log-out"></i> Sair</a>
-          </div>
-         </div>
-        </nav>
-      </div>
-     </div>
+			<div class="row">
+		        <div class="col-md-12">
+				    <button class="btn blue-circle-button">Sobre<span class="blue-circle-greater-than"></span></button>
+				    <button class="btn blue-circle-button">Atividade<span class="blue-circle-greater-than"></span></button>
+				    <a href="{{ route('logout') }}"onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"><button class="btn blue-circle-button">Sair<span class="blue-circle-greater-than"></span></button></a>
+		        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+            </div>   
+			</div>
+		</div>
+	</div>	
 
-      <div class="col-md-5 nav-home">
-        <a href="gerenciarPacientes" class="btn btn-primary">Gerenciar Paciente</a>
-        <a href="gerenciarDependentes" class="btn btn-primary">Gerenciar Dependente</a>
-        <a href="gerenciarProfissionais" class="btn btn-primary">Gerenciar Profissional</a>
-        <a href="#" class="btn btn-primary">Relatório</a>    
-        <a href="exercicio" class="btn btn-primary">Atividades </a>
-      </div>
-    </div><!-- /.container -->
+	<div class="footer-copyright">
+            <div class="container-fluid">
+     	       © 2018 Sinestesys: <a href=""> Lectio.com </a>
+            </div>
+        </div>
+				 <script src="js/bootstrap.min.js"></script>
 
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-  </html>
+			</body>
+			</html>
