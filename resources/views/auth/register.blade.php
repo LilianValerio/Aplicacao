@@ -60,13 +60,11 @@
                                 @endif  
               </div>
             </div>
-            <div class="form-group row">
-            <label for="">Confirmar senha</label>
-
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
+                            <label for="">Confirmar senha</label>
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>      
                         </div>
+                        
             <div class="col-md-6">
               <div class="form-group">
                 <label for="">Telefone</label>
@@ -75,7 +73,6 @@
             </div>
           </div>
           <div class="row">
-
             <div class="col-md-4">
               <div class="form-group">
                 <label for="">Estado</label>
