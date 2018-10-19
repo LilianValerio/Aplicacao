@@ -14,7 +14,7 @@ class CreateDependentesTable extends Migration
     public function up()
     {
         Schema::create('dependentes', function (Blueprint $table) {
-            $table->increments('dependentes_id');
+            $table->increments('id');
             $table->string('name');
             $table->string('sexo');
             $table->Date('dt_nascimento');

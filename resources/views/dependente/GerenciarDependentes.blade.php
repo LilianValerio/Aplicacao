@@ -18,7 +18,7 @@
     <div class="jumbotron-table">
       <h1>Dependentes</h1>
 
-<!-- Filtro de exibição e paginação -->
+<!-- Filtro de exibição e paginação 
     <div class="ls-custom-select">
       Exibir
       <select name="" id="" class="ls-select">
@@ -28,7 +28,7 @@
         <option value="100">100</option>
       </select>
        ítens por página
-    </div>
+    </div> -->
  
 
         <!-- barra de pesquisa-->
@@ -52,8 +52,8 @@
               <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span></th>
               <th class="table-id"></th>
               <th class="table-nome">Nome</th>
-              <th class="table-perfil">Perfil</th>
-              <th class="table-data">Data do Cadastro</th>
+              <th class="table-perfil">Distúrbio</th>
+              <th class="table-data">Data Nascimento</th>
               <th class="table-old-2">Editar</th>
               <th class="table-old-2">Deletar</th>
             </tr>
@@ -123,7 +123,7 @@
  
 <div class="content-buttons" role="group" aria-label="Basic">
     <a href = "cadastrodependente" ><button type="button" class="btn btn-secondary">Novo</button></a>
-  <button type="button" class="btn btn-secondary">Voltar</button>
+    <a href = "home" > <button type="button" class="btn btn-secondary">Voltar</button></a>
 </div>
 
 </div><!-- /.container -->

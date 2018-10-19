@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class userDependenteController extends Controller
+use Illuminate\Http\Request;
+
+class gerenciarDependentesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,23 +34,8 @@ class userDependenteController extends Controller
      */
     public function store(Request $request)
     {
-        
-          if(Auth::check()){ //se tem usuario logado
-            $usuario_id = Auth()->user()->id;
-        }
-   
-
-        $user = new \App\Dependente;
-        $user -> users_id = $usuario_id;
-        $user -> name=$request-> get('name');
-        $user -> sexo =$request->get('sexo');
-        $user -> dt_nascimento=$request->get('dt_nascimento');
-        $user -> disturbio_id =$request->get('disturbio_id');
-        $user -> texto_extra =$request->get('texto_extra'); 
-        $user->save();
-        return view('dependente.GerenciarDependentes');
+        //
     }
-
 
     /**
      * Display the specified resource.

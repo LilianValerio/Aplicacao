@@ -13,8 +13,9 @@
 
 
 Route::resources([
-    'users' => 'UserController', 
-    'dependentes' => 'userDependenteController'
+    'dependentes' => 'userDependenteController',
+    'gerenciarDependentes' => 'gerenciarDependentesController'
+
 ]);
 
 Route::get('/', function () {
