@@ -40,7 +40,7 @@ class userDependenteController extends Controller
         }
    
 
-        $user = new \App\Dependente;
+        $user = new \App\UserDependente;
         $user -> users_id = $usuario_id;
         $user -> name=$request-> get('name');
         $user -> sexo =$request->get('sexo');
