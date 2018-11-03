@@ -15,7 +15,8 @@
 Route::resources([
     //'users' => 'UserController', 
     'dependentes' => 'userDependenteController',
-    'home' => 'HomeController'
+    'home' => 'HomeController',
+    'profissional' => 'userProfissionalController'
 ]);
 
 Route::get('/', function () {
@@ -44,6 +45,10 @@ Route::get('cadastrodependente', function () {
 
 Route::get('gerenciarDependentes', function () {
     return view('dependente.GerenciarDependentes');
+});
+
+Route::get('cadastroProfissional', function () {
+    return view('profissional.CadastroProfissional');
 });
 
 Auth::routes();

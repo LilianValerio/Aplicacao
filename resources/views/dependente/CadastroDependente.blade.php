@@ -53,10 +53,10 @@
 
                 <div class="form-group">
                         <div class="">
-                            <button type ="submit" class="btn btn-secondary">Cadastrar</button>
+                            <button type ="submit" class="btn">Cadastrar</button>
                         </div>
                          <div>
-                            <a href="{{ route('dependentes.index') }}"><button type="button" class="btn btn-secondary">Voltar</button></a>
+                            <a href="{{ route('dependentes.index') }}"><button type="button" class="btn">Voltar</button></a>
                         </div>
                 </div>
             </form>

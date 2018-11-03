@@ -19,8 +19,9 @@ class CreateUsersProfissionalTable extends Migration
             $table->String('especialidade');
             $table->Date('dt_ini_area');
             $table->String('campo_extra');
-            $table->Integer('users_id')->unsigned();
-            $table->foreign('users_id')
+            $table->String('name');
+            $table->Integer('user_id')->unsigned();
+            $table->foreign('user_id')
             ->references('id')->on('users')
             ->onDelete('cascade');
             $table->timestamps();

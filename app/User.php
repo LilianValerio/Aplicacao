@@ -32,4 +32,8 @@ class User extends Authenticatable
     public function dependentes(){
         return $this->hasMany(Dependente::class)->orderBy('dt_nascimento');
     }
+
+    public function profissionais(){
+        return $this->hasMany(UserProfissional::class)->orderBy('id');
+    }
 }
