@@ -26,17 +26,7 @@
                                     </span>
                                 @endif
           </div>
-          <div class="form-group">
-            <label for="">Sexo</label>
-            <div class="col-md-12 radio">
-            <div class="col-md-4">
-                <input class="" type="radio" name="sexo" value="M"> Masculino
-              </div>
-            <div class="col-md-4">
-                <input class="" type="radio" name="sexo" value="F"> Feminino
-              </div>
-            </div>
-          </div>
+          
           <div class="form-group">
             <label for="">E-mail</label>
             <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -60,62 +50,16 @@
                                 @endif  
               </div>
             </div>
-                            <div class="col-md-6">
-                            <label for="">Confirmar senha</label>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>      
-                        </div>
-                        
-            <div class="col-md-6">
-              <div class="form-group">
-                <label for="">Telefone</label>
-                <input class="form-control" type="text" placeholder="Telefone" name="telefone">  
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4">
-              <div class="form-group">
-                <label for="">Estado</label>
-                <select class="form-control" name="estado" id="estado">
-                  <option value="" disabled="" selected>Selecione</option> 
-                  <option value="AC">AC</option> 
-                  <option value="AL">AL</option> 
-                  <option value="AM">AM</option> 
-                  <option value="AP">AP</option> 
-                  <option value="BA">BA</option> 
-                  <option value="CE">CE</option> 
-                  <option value="DF">DF</option> 
-                  <option value="ES">ES</option> 
-                  <option value="GO">GO</option> 
-                  <option value="MA">MA</option> 
-                  <option value="MT">MT</option> 
-                  <option value="MS">MS</option> 
-                  <option value="MG">MG</option> 
-                  <option value="PA">PA</option> 
-                  <option value="PB">PB</option> 
-                  <option value="PR">PR</option> 
-                  <option value="PE">PE</option> 
-                  <option value="PI">PI</option> 
-                  <option value="RJ">RJ</option> 
-                  <option value="RN">RN</option> 
-                  <option value="RO">RO</option> 
-                  <option value="RS">RS</option> 
-                  <option value="RR">RR</option> 
-                  <option value="SC">SC</option> 
-                  <option value="SE">SE</option> 
-                  <option value="SP">SP</option> 
-                  <option value="TO">TO</option> 
-                </select> 
-              </div>
-            </div>
-            <div class="col-md-8">
-              <div class="form-group">
-                <label for="">Cidade</label>
-                <input class="form-control" type="text" placeholder="Cidade" name="cidade">  
-              </div>
-            </div>
-          </div>
+            <div class="form-group row">
+            <label for="">Confirmar senha</label>
 
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+            
+          </div>
+          
           <div class="form-group">
             <div class="">
               <a href="index" class="btn">Voltar</a>

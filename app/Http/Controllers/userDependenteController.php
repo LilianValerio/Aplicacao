@@ -1,8 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Dependente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
+
 
 class userDependenteController extends Controller
 {
@@ -11,9 +14,16 @@ class userDependenteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+      
     public function index()
     {
-        //
+        $id = Auth::id();
+        $users = \App\User::find($id);
+
+        $dependente =  $users->dependentes;
+        return view('dependente.GerenciarDependentes',compact('dependente'));
+
     }
 
     /**
@@ -34,23 +44,27 @@ class userDependenteController extends Controller
      */
     public function store(Request $request)
     {
-        
+          /*if(Auth::check()){ //se tem usuario logado
+            $usuario_id = Auth::id();
+            }   */
+
           if(Auth::check()){ //se tem usuario logado
             $usuario_id = Auth()->user()->id;
         }
    
 
-        $user = new \App\UserDependente;
-        $user -> users_id = $usuario_id;
+        $user = new \App\Dependente;
+        $user -> user_id = $usuario_id;
         $user -> name=$request-> get('name');
         $user -> sexo =$request->get('sexo');
         $user -> dt_nascimento=$request->get('dt_nascimento');
         $user -> disturbio_id =$request->get('disturbio_id');
         $user -> texto_extra =$request->get('texto_extra'); 
         $user->save();
-        return view('dependente.GerenciarDependentes');
-    }
 
+        $mensagem = 'Dependente criado com sucesso!';
+        return redirect()->route('dependentes.index')->with('mensagem',$mensagem);
+    }
 
     /**
      * Display the specified resource.
@@ -71,7 +85,9 @@ class userDependenteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dependente = \App\Dependente::findOrFail($id);
+        return view('dependente.edit',compact('dependente'));
+
     }
 
     /**
@@ -83,7 +99,12 @@ class userDependenteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dependente = \App\Dependente::findOrFail($id);
+
+        $dependente->update($request->all());
+
+        $mensagem = 'Dependente editado com sucesso!';
+        return redirect()->route('dependentes.index')->with('mensagem',$mensagem);
     }
 
     /**
@@ -94,6 +115,11 @@ class userDependenteController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $dependente = \App\Dependente::findOrFail($id);
+        $dependente->delete();
+        $mensagem = "Dependente deletado com sucesso!";
+
+//        return view('GerenciarDependentes')->with('mensagem', $mensagem);
+        return redirect()->route('dependentes.index')->with('mensagem', $mensagem);
     }
 }

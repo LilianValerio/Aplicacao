@@ -28,4 +28,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function dependentes(){
+        return $this->hasMany(Dependente::class)->orderBy('dt_nascimento');
+    }
 }
