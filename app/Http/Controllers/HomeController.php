@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+     
+        if(Auth::check()){
+            $perfil = Auth()->user()->perfil;
+            $id = Auth()->user()->id;
+        }
+             
+       if($perfil == "P"){        
+        $profissional =  \App\UserProfissional::where('user_id',$id);       
+         if($profissional == NULL ||  $profissional == ""){
+            return view('profissional.CadastroProfissional');       
+         }else{
+            return view('home');  
+         }
+
+       }else{
+        return view('home');   
+       } 
+        
     }
 }

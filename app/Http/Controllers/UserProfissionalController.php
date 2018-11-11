@@ -14,11 +14,12 @@ class UserProfissionalController extends Controller
      */
     public function index()
     {
-        $id = Auth::id();
+      /*  $id = Auth::id();
         $users = \App\User::find($id);
         $profissional =  $users->profissionais;
 
-        return view('profissional.GerenciarProfissionais',compact('profissional'));
+        return view('home',compact('profissional'));*/
+       return view('home');
     }
 
     /**
