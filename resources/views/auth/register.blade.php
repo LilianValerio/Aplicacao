@@ -26,6 +26,18 @@
                                     </span>
                                 @endif
           </div>
+
+          <div class="form-group">
+                <label for="">Sou profissional?</label>
+                    <div class="col-md-12 radio">
+                        <div class="col-md-4">
+                        <input class="" type="radio" name="perfil" value="P" required = "required" > Sim
+                        </div>
+                        <div class="col-md-4">
+                        <input class="" type="radio" name="perfil" value="U" required = "required"> Não
+                        </div>
+                    </div>
+                </div>
           
           <div class="form-group">
             <label for="">E-mail</label>
@@ -36,7 +48,7 @@
                                     </span>
                                 @endif
           </div>
-
+          
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
@@ -49,16 +61,18 @@
                                   </span>
                                 @endif  
               </div>
+              </div>
             </div>
-            <div class="form-group row">
+            <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
             <label for="">Confirmar senha</label>
-
-                            <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
-                        </div>
-            
+                        </div>           
           </div>
+          
+
           
           <div class="form-group">
             <div class="">
