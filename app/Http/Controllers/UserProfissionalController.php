@@ -14,12 +14,12 @@ class UserProfissionalController extends Controller
      */
     public function index()
     {
-      /*  $id = Auth::id();
+        $id = Auth::id();
         $users = \App\User::find($id);
         $profissional =  $users->profissionais;
 
-        return view('home',compact('profissional'));*/
-       return view('home');
+        return view('profissional.GerenciarProfissionais',compact('profissional'));
+    
     }
 
     /**
@@ -29,7 +29,7 @@ class UserProfissionalController extends Controller
      */
     public function create()
     {
-        //
+        return view('profissional.gerenciarProfissionais');
     }
 
     /**
@@ -112,4 +112,5 @@ class UserProfissionalController extends Controller
 
         return redirect()->route('profissional.index')->with('mensagem', $mensagem);
     }
+    
 }

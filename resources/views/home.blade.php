@@ -18,7 +18,7 @@
 		        <div class="col-md-12">
 				    <a href="#" target=""><button class="btn blue-circle-button">Meus Dados<span class="blue-circle-greater-than"></span></button></a>
 					<a href="{{ route('dependentes.index') }}"><button class="btn blue-circle-button">Dependentes<span class="blue-circle-greater-than"></span></button></a>
-					<a href="{{ route('profissional.index') }}"><button class="btn blue-circle-button">Profissionais<span class="blue-circle-greater-than"></span></button></a>
+					<a href="{{ route('profissional.create') }}"><button class="btn blue-circle-button">Profissionais<span class="blue-circle-greater-than"></span></button></a>
 		        </div>   
 			</div>
 

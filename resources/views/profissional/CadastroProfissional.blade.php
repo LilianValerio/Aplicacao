@@ -43,7 +43,7 @@
 
     <div class="form-group">
             <div class="">
-              <a href="{{ route('profissional.index')}}" class="btn">Voltar</a>
+              <a href="cadastro" class="btn">Voltar</a>
             </div>
 
             <div class="">

@@ -30,9 +30,11 @@ class HomeController extends Controller
             $id = Auth()->user()->id;
         }
              
-       if($perfil == "P"){        
+       if($perfil == "P"){    
+        
         $profissional =  \App\UserProfissional::where('user_id',$id);       
-         if($profissional == NULL ||  $profissional == ""){
+        return view('profissional.CadastroProfissional');  
+        if($profissional == NULL ||  $profissional == ""){
             return view('profissional.CadastroProfissional');       
          }else{
             return view('home');  

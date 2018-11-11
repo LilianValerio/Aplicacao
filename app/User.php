@@ -38,6 +38,6 @@ class User extends Authenticatable
     }
 
       public function profissionalExists($id){
-        return $this->belongsTo(UserProfissional::class);
+        return $this->belongsTo(UserProfissional::class)->where('user_id', $id);
       }
 }
