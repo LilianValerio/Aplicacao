@@ -37,7 +37,11 @@ class User extends Authenticatable
         return $this->hasMany(UserProfissional::class)->orderBy('id');
     }
 
-      public function profissionalExists($id){
-        return $this->belongsTo(UserProfissional::class)->where('user_id', $id);
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
+
+      public function profissionalExists(){
+        return $this->belongsTo(UserProfissional::class);
       }
 }

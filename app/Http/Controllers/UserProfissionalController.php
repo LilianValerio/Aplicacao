@@ -18,7 +18,7 @@ class UserProfissionalController extends Controller
         $users = \App\User::find($id);
         $profissional =  $users->profissionais;
 
-        return view('profissional.GerenciarProfissionais',compact('profissional'));
+        return view('home.GerenciarProfissionais',compact('profissional'));
     
     }
 
@@ -55,7 +55,8 @@ class UserProfissionalController extends Controller
         $user->save();
 
         $mensagem = 'Profissional criado com sucesso!';
-        return redirect()->route('profissional.index')->with('mensagem',$mensagem);
+//return redirect()->route('home.show')->with('mensagem',$mensagem);
+return view('home_pro');
     }
 
     /**

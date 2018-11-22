@@ -10,10 +10,7 @@ class UserProfissional extends Model
     protected $guarded = ['id', 'created_at', 'update_at'];
     protected $table = 'users_profissional';
     
-    public function users(){
-        return $this->belongsTo(User::class);
-    }
-    
+ 
     public function profissional(){
         return $this->belongsTo(User::class);
     }

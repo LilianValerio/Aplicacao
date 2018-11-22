@@ -30,19 +30,24 @@ class HomeController extends Controller
             $id = Auth()->user()->id;
         }
              
-       if($perfil == "P"){    
+        if($perfil == "P"){ 
+           
+            return view('profissional.CadastroProfissional');
+        }else{
+            return view('home');
+        }
+      
         
-        $profissional =  \App\UserProfissional::where('user_id',$id);       
-        return view('profissional.CadastroProfissional');  
-        if($profissional == NULL ||  $profissional == ""){
-            return view('profissional.CadastroProfissional');       
-         }else{
-            return view('home');  
-         }
+    }
 
-       }else{
-        return view('home');   
-       } 
-        
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show()
+    {
+        return view('home_pro');
+    
     }
 }
