@@ -41,7 +41,7 @@ class User extends Authenticatable
         return $this->belongsTo(User::class);
     }
 
-      public function profissionalExists(){
+      public function existProfissional(){
         return $this->belongsTo(UserProfissional::class);
       }
 }

@@ -32,7 +32,17 @@ class HomeController extends Controller
              
         if($perfil == "P"){ 
            
-            return view('profissional.CadastroProfissional');
+            $id = Auth::id();
+            $users = \App\User::find($id);
+    
+            $profissional =  $users->existProfissional;
+            if($profissional == null){
+                return view('profissional.CadastroProfissional');
+            }else{
+                return view('home_pro');  
+            }
+
+            
         }else{
             return view('home');
         }
