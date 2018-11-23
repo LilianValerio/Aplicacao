@@ -35,7 +35,7 @@ class HomeController extends Controller
             $id = Auth::id();
             $users = \App\User::find($id);
     
-            $profissional =  $users->existProfissional;
+            $profissional =  $users->existProfissional($id);
             if($profissional == null){
                 return view('profissional.CadastroProfissional');
             }else{
