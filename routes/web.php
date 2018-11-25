@@ -47,7 +47,7 @@ Route::get('gerenciarDependentes', function () {
     return view('dependente.GerenciarDependentes');
 });
 
-Route::get('criarprofissional', function () {
+Route::get('/criarprofissional', function () {
     return view('profissional.CadastroProfissional');
 });
 

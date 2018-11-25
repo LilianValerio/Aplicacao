@@ -35,7 +35,6 @@
                 <th class="table-perfil">Tipo Profissional</th>
                 <th class="table-data">Especialidade</th>
                   <th class="table-data">Obs</th>
-                <th class="table-old-2">Editar</th>
                 <th class="table-old-2">Deletar</th>
               </tr>
               </thead>
@@ -48,9 +47,6 @@
   <td>{{$profissional_['profissao']}}</td>
   <td>{{$profissional_['especialidade']}}</td>
     <td>{{$profissional_['campo_extra']}}</td>
-
-    <th><a href="{{ route('profissional.edit', ['id'=>$profissional_->id]) }}"><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a></th>
-
    <td>
 
       <form action="/profissional/{{ $profissional_->id }}" method="POST">
@@ -68,9 +64,46 @@
         </div>
 
      </div>
+
+         <div class="jumbotron-table">
+      <h1> Profissionais Disponíveis</h1>
+
+
+        <div class="table-rolagem">
+          <table class="table table-hover table-responsive">
+
+              <thead>
+              <tr>
+                <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span></th>
+                <th class="table-nome">Nome</th>
+                <th class="table-perfil">Tipo Profissional</th>
+                <th class="table-data">Especialidade</th>
+                  <th class="table-data">Obs</th>
+                <th class="table-old-2">Associar</th>
+              </tr>
+              </thead>
+              <tbody>
+              @foreach($profissionais as $profissional_)
+
+<tr>
+  <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span></th>
+  <td>{{$profissional_['name']}}</td>
+  <td>{{$profissional_['profissao']}}</td>
+  <td>{{$profissional_['especialidade']}}</td>
+    <td>{{$profissional_['campo_extra']}}</td>
+
+    <th><a href="{{ route('profissional.edit', ['id'=>$profissional_->id]) }}"><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a></th>
+
+</tr>
+@endforeach
+
+              </tbody>
+        </table>
+        </div>
+
+     </div>
  
 <div class="content-buttons" role="group" aria-label="Basic">
-    <a href = "cadastroProfissional" ><button type="button" class="btn btn-secondary">Novo</button></a>
   <a href="{{ route('home') }}"><button type="button" class="btn btn-secondary">Voltar</button></a>
 </div>
 

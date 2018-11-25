@@ -18,7 +18,9 @@ class UserProfissionalController extends Controller
         $users = \App\User::find($id);
         $profissional =  $users->profissionais;
 
-        return view('home.GerenciarProfissionais',compact('profissional'));
+        $profissionais = \App\UserProfissional::All();
+        
+        return view('profissional.GerenciarProfissionais',compact('profissional', 'profissionais'));
     
     }
 
