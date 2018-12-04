@@ -67,6 +67,7 @@ label{
     padding-bottom: 5px;
     margin-bottom: 30px;
     font-size: 2em;
+
 }
 .jumbotron-table{
     table-layout: fixed;
@@ -488,11 +489,15 @@ textarea.form-control{
     background: #fff!important;
     border: 2px solid transparent;
 }
-p #p{
+#p{
     font-weight: bold;
+    font-size: 35px;
+    text-shadow: #00BFFF -1px -1px ;
+
 }
 #palavraSemIni{
     background: #F2F2F2;
+    font-size: 40px;
     border-radius: 10px;
 }
 .btn-info{
@@ -629,6 +634,7 @@ p #p{
         padding-bottom: 15px;
         text-align: center;
         font-family: Raleway, Arial, sans-serif;
+        text-shadow: black -1px -1px;
     }
     p{
         color: #000 !important;
@@ -708,4 +714,8 @@ p #p{
     text-decoration: none;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
+}
+
+#botao {
+    border-radius: 30px;
 }
