@@ -15,6 +15,19 @@ class CreateResultAtividadesTable extends Migration
     {
         Schema::create('result_atividades', function (Blueprint $table) {
             $table->increments('id');
+            $table->smallInteger('acertos')->nullable();
+            $table->smallInteger('erros')->nullable();
+            $table->char('status')->nullable();
+
+            $table->Integer('dependente_id')->unsigned();
+            $table->foreign('dependente_id')
+                ->references('id')->on('dependentes')
+                ->onDelete('cascade');
+
+            $table->Integer('atividade_id')->unsigned();
+            $table->foreign('atividade_id')
+                ->references('id')->on('atividades')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
