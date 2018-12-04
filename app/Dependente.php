@@ -12,9 +12,13 @@ class Dependente extends Model
     protected $guarded = ['dependentes_id', 'created_at', 'update_at'];
     protected $table = 'dependentes';
 
-   public function users(){
+    public function users(){
         return $this->belongsTo(User::class);
-    } 
+    }
+
+    public function resultAtividades(){
+        return $this->hasMany(ResultAtividade::class)->orderBy('id');
+    }
 
 }
 
