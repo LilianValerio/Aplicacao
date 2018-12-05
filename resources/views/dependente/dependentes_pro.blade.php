@@ -70,7 +70,6 @@
      </div>
  
 <div class="content-buttons" role="group" aria-label="Basic">
-    <a href = "cadastrodependente" ><button type="button" class="btn btn-secondary">Novo</button></a>
   <a href="{{ route('home') }}"><button type="button" class="btn btn-secondary">Voltar</button></a>
 </div>
 
