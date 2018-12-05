@@ -15,6 +15,7 @@ class CreateUsersRelationshipsTable extends Migration
     {
         Schema::create('users_relationships', function (Blueprint $table) {
             $table->increments('id');
+            $table->String('Solicitado');
             $table->Integer('user_id')->unsigned();
             $table->foreign('user_id')
             ->references('id')->on('users')
