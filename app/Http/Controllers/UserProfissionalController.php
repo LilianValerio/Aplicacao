@@ -80,8 +80,17 @@ return view('home_pro');
      */
     public function edit($id)
     {
-        $profissional = \App\UserProfissional::findOrFail($id);
-        return view('profissional.edit',compact('profissional'));
+        if(Auth::check()){ //se tem usuario logado
+            $usuario_id = Auth()->user()->id;
+        }
+        $relacione = new \App\UsersRelationship;
+        $relacione -> Solicitado = "S";
+        $relacione -> user_id = $usuario_id; 
+        $relacione -> user_profissional_id = $id;
+        $relacione->save();
+
+        $mensagem = 'Efetuado a solicitação ao profissional com Sucesso!';
+        return redirect()->route('profissional.index')->with('mensagem', $mensagem);
 
     }
 

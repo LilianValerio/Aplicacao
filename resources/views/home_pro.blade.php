@@ -17,7 +17,7 @@
 			<div class="row">
 		        <div class="col-md-12">
 				    <a href="#" target=""><button class="btn blue-circle-button">Meus Dados<span class="blue-circle-greater-than"></span></button></a>
-					<a href="{{ route('dependentes.index') }}"><button class="btn blue-circle-button">Pacientes<span class="blue-circle-greater-than"></span></button></a>
+					<a href="{{ route('associar.index') }}"><button class="btn blue-circle-button">Pacientes<span class="blue-circle-greater-than"></span></button></a>
 					<a href="{{ route('logout') }}"onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><button class="btn blue-circle-button">Sair<span class="blue-circle-greater-than"></span></button></a>
 		        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

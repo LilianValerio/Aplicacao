@@ -16,7 +16,8 @@ Route::resources([
     //'users' => 'UserController', 
     'dependentes' => 'userDependenteController',
     'home' => 'HomeController',
-    'profissional' => 'userProfissionalController'
+    'profissional' => 'userProfissionalController',
+    'associar'=> 'dependentes_ProController'
 //    'atividades' => 'AtividadeController'
 ]);
 

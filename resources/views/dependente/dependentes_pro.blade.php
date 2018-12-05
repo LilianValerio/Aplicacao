@@ -22,7 +22,7 @@
       @endif
 
     <div class="jumbotron-table">
-      <h1> Meus Dependentes</h1>
+      <h1> Meus Pacientes</h1>
 
 
         <div class="table-rolagem">

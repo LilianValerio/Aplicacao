@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Dependente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class dependentes_ProController extends Controller
 {
@@ -14,10 +15,11 @@ class dependentes_ProController extends Controller
     public function index()
     {
         
-        $users = \App\Dependente::All;
+        $id = Auth::id();
+        $users = \App\User::find($id);
 
         $dependente =  $users->dependentes;
-        return view('dependente.dependente_pro',compact('dependente'));
+        return view('dependente.dependentes_pro',compact('dependente'));
 
     }
 

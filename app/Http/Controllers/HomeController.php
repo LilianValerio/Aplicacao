@@ -31,7 +31,7 @@ class HomeController extends Controller
         }
              
         if($perfil == "P"){ 
-            return view('profissional.CadastroProfissional');
+           // return view('profissional.CadastroProfissional');
             $id = Auth::id();
             $users = \App\User::find($id);
     
