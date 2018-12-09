@@ -84,9 +84,16 @@ class resultAtividadeController extends Controller
      * @param  \App\ResultAtividade  $resultAtividade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ResultAtividade $resultAtividade)
+    public function update(Request $request, $id, $id_dep)
     {
-        //
+        $result = \App\ResultAtividade::findOrFail($id);
+        $result -> acertos = $request->get('acertos');
+        $result -> erros = $request->get('erros');
+        $result -> status = 'finalizado';
+        $result -> save();
+
+        return redirect()->route('atividades', ['id'=> $id_dep]);
+
     }
 
     /**

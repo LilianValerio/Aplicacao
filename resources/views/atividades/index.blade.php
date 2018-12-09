@@ -17,7 +17,7 @@
 			<div class="row">
 		        <div class="col-md-12">
 				    <a href="{{ route('home') }}" target=""><button class="btn blue-circle-button">Home<span class="blue-circle-greater-than"></span></button></a>
-					<a href="{{ route('atividades', ['id'=>$dependente->id, 'id_atvd'=>1]) }}"><button class="btn blue-circle-button">Iniciais<span class="blue-circle-greater-than"></span></button></a>
+					<a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>1]) }}"><button class="btn blue-circle-button">Iniciais<span class="blue-circle-greater-than"></span></button></a>
 					<a href="#"><button class="btn blue-circle-button">Atividade 2<span class="blue-circle-greater-than"></span></button></a>
 		        </div>   
 			</div>

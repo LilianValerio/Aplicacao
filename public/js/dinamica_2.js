@@ -1,14 +1,14 @@
 var contAcertos = 0;
 var contErros = 0;
-var rodadas = 5; //delimita a quant de rodadas
+var rodadas = 5;
 var contRodadas = 1;
 var inicialIn;
 var letraBotao = []; //array para armazenar letras nos botões
 var palavraSemIni;
 var inicial;
 var alfa = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"];
-document.getElementById('form').style.display = 'none';
 
+document.getElementById('fim').style.display = 'none';
 function carrega_pagina() {
 
     //array com todas as letras do alfabeto
@@ -61,10 +61,10 @@ function verify() {
     if (inicialIn.toLowerCase() == letras[0]) {
         document.getElementById("result").innerHTML = "Acertou!!!";
         contAcertos += 1;
-        } else {
+    } else {
         document.getElementById("result").innerHTML = "Se enganou, tente novamente!";
         contErros += 1;
-        }
+    }
 
     document.getElementById("palavraSemIni").innerHTML = inicialIn.toUpperCase() + palavraSemIni;
 }
@@ -90,13 +90,9 @@ function botao(escolha) {
     if (contRodadas < rodadas) {
         contRodadas += 1;
     }else {
-        document.getElementById("fim").innerHTML = "Parabéns!!! você Terminou clique em voltar para o painel de atividades!!! " + "<br>" + "Acertos = " + contAcertos + "<br>" + "Erros = " + contErros;
-        document.getElementById("form").style.display = "block";
+
         document.getElementById('proximo').onclick = "disabled";
-        document.getElementById("acertos").value = contAcertos;
-        document.getElementById("erros").value = contErros;
-        document.getElementById('proximo').style.display = 'none';
-        document.getElementById('voltar').style.display = 'none';
+        document.getElementById('fim').style.display = 'block';
     }
 }
 

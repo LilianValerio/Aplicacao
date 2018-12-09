@@ -26,7 +26,7 @@
 
 
         <div class="table-rolagem">
-          <table class="table table-hover table-responsive">
+          <table class="table table-hover table-responsive" id="tabela">
 
               <thead>
               <tr>
@@ -37,10 +37,11 @@
                   <th class="table-data">Obs.</th>
                 <th class="table-old-2">Editar</th>
                 <th class="table-old-2">Deletar</th>
+                <th class="table-old-2">Jogar</th>
               </tr>
               </thead>
               <tbody>
-                @foreach($dependente as $dependente_)
+                @forelse($dependente as $dependente_)
 
                   <tr>
                     <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span></th>
@@ -49,7 +50,7 @@
                     <td>{{$sexo = $dependente_['sexo']== 'M' ?  'Masculino' : 'Feminino'}}</td>
                       <td>{{$dependente_['texto_extra']}}</td>
                     {{--<td>{{$dependente_['name']}}</td>--}}
-                      <th><a href="{{ route('dependentes.edit', ['id'=>$dependente_->id]) }}"><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a></th>
+                     <th><a href="{{ route('dependentes.edit', ['id'=>$dependente_->id]) }}"><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a></th>
 
                      <td>
 
@@ -60,8 +61,15 @@
                         </form>
 
                      </td>
+                     <td><a href="{{ route('atividades', $dependente_->id) }}"><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" >{{ $dependente_->id }}</button></a></td>
                   </tr>
-                @endforeach
+                @empty
+                    <script>
+                        document.getElementById('tabela').innerHTML = 'Não há usuários cadastrados';
+                        document.getElementById('tabela').style.textAlign = 'center';
+                        document.getElementById('tabela').style.fontSize = '30px';
+                    </script>
+                @endforelse
 
               </tbody>
         </table>

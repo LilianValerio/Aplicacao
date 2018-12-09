@@ -18,8 +18,7 @@ Route::resources([
     'home' => 'HomeController',
     'profissional' => 'userProfissionalController',
     'associar'=> 'dependentes_ProController'
-//    'atividades' => 'AtividadeController'
-]);
+     ]);
 
 Route::get('/criarprofissional', function () {
     return view('profissional.CadastroProfissional');
@@ -57,13 +56,14 @@ Route::get('gerenciarDependentes', function () {
 //   return Redirect::route('atividades.dep_atividade', $id);
 //});
 
-Route::get('/atividades/index/{id}', 'AtividadeController@index');
 Route::get('/atividades/iniciais/{id}', 'AtividadeController@dep_atividade');
 
-Route::get('/atividades/index/{id}', 'AtividadeController@index');
+Route::get('/atividades/{id}', 'AtividadeController@index')->name('atividades');
 
-Route::get('atividades/{id}/{id_atvd}', 'AtividadeController@dep_atividade')->name('atividades');
+
+Route::get('atividades/{id}/{id_atvd}', 'AtividadeController@dep_atividade')->name('dep_atividades');
 Route::get('resultAtividades/{atividade_id}/{dependente_id}', 'resultAtividadeController@insert')->name('resultAtividades');
+Route::put('/resultAtividades/update/{id}/{id_dep}', 'resultAtividadeController@update')->name('resultatividades.update');
 
 Auth::routes();
 

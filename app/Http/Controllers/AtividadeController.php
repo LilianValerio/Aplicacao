@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Atividade;
-use App\ResultAtividade;
+use App\Dependente;
 use Illuminate\Http\Request;
 
 class AtividadeController extends Controller
@@ -32,10 +32,11 @@ class AtividadeController extends Controller
         $result -> erros = 0;
         $result -> status = 'iniciado';
         $result -> save();
+        $idresult = $result -> id;
 
         switch ($id_atvd ) {
             case 1:
-                return view('atividades.iniciais', compact('dependente', 'palavra'));
+                return view('atividades.iniciais', compact('dependente', 'palavra', 'idresult'));
                 break;
             default:  echo 'Atividade não encontrada';
         }

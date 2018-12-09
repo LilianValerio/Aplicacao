@@ -47,7 +47,7 @@ class UserProfissionalController extends Controller
             $usuario_name = Auth()->user()->name;
         }
 
-        $user = new \App\UserProfissional;
+            $user = new \App\UserProfissional;
         $user -> user_id = $usuario_id;
         $user -> name = $usuario_name;
         $user -> profissao=$request-> get('profissao');
