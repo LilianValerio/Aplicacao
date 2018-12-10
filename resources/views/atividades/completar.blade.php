@@ -38,11 +38,10 @@
 
                 </script>
 
-                <p id="p">Descubra a inicial das palavras</p>
+                <p id="p">Qual letra está faltando?</p>
 
                 <p id="palavraSemIni"></p>
 
-                <p id="palavraComIni"></p>
                 <p id="result"></p>
                 <p id="fim"></p>
 
@@ -81,7 +80,7 @@
 
 {{--Os arquivos JS devem ser carregados depois da página ser renderizada--}}
 <script src="<?php echo asset('js/bootstrap.min.js')?>"></script>
-<script src="<?php echo asset('js/dinamica_iniciais.js')?>"></script>
+<script src="<?php echo asset('js/dinamica_completar.js')?>"></script>
 </html>
 
 

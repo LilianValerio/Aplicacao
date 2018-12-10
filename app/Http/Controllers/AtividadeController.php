@@ -38,6 +38,9 @@ class AtividadeController extends Controller
             case 1:
                 return view('atividades.iniciais', compact('dependente', 'palavra', 'idresult'));
                 break;
+            case 2:
+                return view('atividades.completar', compact('dependente', 'palavra', 'idresult'));
+                break;
             default:  echo 'Atividade não encontrada';
         }
     }
