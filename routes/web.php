@@ -17,6 +17,7 @@ Route::resources([
     'dependentes' => 'userDependenteController',
     'home' => 'HomeController',
     'profissional' => 'userProfissionalController',
+    'relatorio' => 'relatorioController',
     'associar'=> 'dependentes_ProController'
      ]);
 
@@ -64,6 +65,14 @@ Route::get('/atividades/{id}', 'AtividadeController@index')->name('atividades');
 Route::get('atividades/{id}/{id_atvd}', 'AtividadeController@dep_atividade')->name('dep_atividades');
 Route::get('resultAtividades/{atividade_id}/{dependente_id}', 'resultAtividadeController@insert')->name('resultAtividades');
 Route::put('/resultAtividades/update/{id}/{id_dep}', 'resultAtividadeController@update')->name('resultatividades.update');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

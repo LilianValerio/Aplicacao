@@ -1,0 +1,91 @@
+select * from atividades;
+
+INSERT INTO public.atividades(
+             created_at, updated_at)
+    VALUES ( now(), now());
+			
+			
+			INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'bola', 1, 4, 2, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'dado', 1, 4, 2, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'dedo', 1, 4, 2, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'casa', 1, 4, 2, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'mesa', 1, 4, 2, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'boneca', 2, 6, 3, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'sapato', 2, 6, 3, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'cachorro', 2, 7, 3, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'panela', 2, 6, 3, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'pirulito', 3, 8, 4, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'bicicleta', 3, 9, 4, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'cadeado', 3, 7, 4, 'teste');
+
+INSERT INTO public.palavras(
+            created_at, updated_at, name, nivel, qtd_letras, qtd_silabas, 
+            tipo)
+    VALUES ( now(), now(), 'televisão', 3, 9, 4, 'teste');
+			
+			create or replace function fn_periodo()
+returns trigger as $periodo_trigger$
+begin
+update public.result_atividades 
+set periodo = (new.updated_at - new.created_at)
+where id = new.id;
+return new;
+end;
+$periodo_trigger$ language plpgsql;
+
+
+create trigger tr_periodo 
+after update of updated_at on result_atividades
+for each row
+execute procedure fn_periodo()
+			
+			
+			
+			

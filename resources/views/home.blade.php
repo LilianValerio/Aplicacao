@@ -25,7 +25,7 @@
 			<div class="row">
 		        <div class="col-md-12">
 				    <button class="btn blue-circle-button">Atividades<span class="blue-circle-greater-than"></span></button>
-				    <button class="btn blue-circle-button">Relatórios<span class="blue-circle-greater-than"></span></button>
+				    <a href="{{ route('relatorio.index') }}"><button class="btn blue-circle-button">Relatórios<span class="blue-circle-greater-than"></span></button></a>
 				    <a href="{{ route('logout') }}"onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><button class="btn blue-circle-button">Sair<span class="blue-circle-greater-than"></span></button></a>
 		        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
