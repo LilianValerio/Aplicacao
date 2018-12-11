@@ -11,25 +11,23 @@ class AddPeriodoResultAtividades extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-       Schema::table('result_atividades', function (Blueprint $table) {
-           $table-time('periodo') 
-                       ->nullable() 
-                       ->after('updated_at'); 
-       });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
+   
+public function up()
 {
-   Schema::table('result_atividades', function (Blueprint $table) {
-       $table->dropColumn('periodo');
-   });
+Schema::table('result_atividades', function (Blueprint $table) {
+$table -> time('periodo')->nullable()->after('updated_at');
+});
 }
 
+/**
+* Reverse the migrations.
+*
+* @return void
+*/
+public function down()
+{
+Schema::table('result_atividades', function (Blueprint $table) {
+$table->dropColumn('pediodo');
+});
+}
 }
