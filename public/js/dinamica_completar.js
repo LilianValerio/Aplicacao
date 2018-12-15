@@ -35,10 +35,12 @@ function carrega_pagina() {
     //sorteia letras aleatórias aos botões
     var count2 = 0; //zera contador
     var indiceBotao = 0; //contador para botao
+    var letraUsada = []; //armazena letras já usadas nos botões
     while (count2 < 3) {
         indiceBotao = Math.floor(Math.random() * 22);
         letraBotao [count2] = alfa[indiceBotao];
-            if (letraBotao[count2] == letra) continue;
+            if (letraBotao[count2] == letra || letraUsada.indexOf(letraBotao[count2]) >= 0) continue;
+        letraUsada[count2] =letraBotao[count2];
         count2 += 1;
     }
 

@@ -44,6 +44,4 @@ class User extends Authenticatable
       public function existProfissional($id){
         return $this->belongsTo(UserProfissional::class)->where('user_id', $id);
       }
-
-      
 }

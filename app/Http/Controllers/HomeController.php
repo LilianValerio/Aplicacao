@@ -1,8 +1,10 @@
 <?php
+
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller
 {
     /**
@@ -14,6 +16,7 @@ class HomeController extends Controller
     {
         $this->middleware('auth');
     }
+
     /**
      * Show the application dashboard.
      *
@@ -32,13 +35,13 @@ class HomeController extends Controller
             $id = Auth::id();
             $users = \App\User::find($id);
     
-            $profissional =  $users->profissionais();
-
+            $profissional =  $users->existProfissional($id);
             if($profissional == null){
                 return view('profissional.CadastroProfissional');
             }else{
                 return view('home_pro');  
             }
+
             
         }else{
             return view('home');
@@ -46,6 +49,7 @@ class HomeController extends Controller
       
         return view('home');
     }
+
      /**
      * Display a listing of the resource.
      *

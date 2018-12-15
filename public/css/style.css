@@ -493,23 +493,35 @@ textarea.form-control{
     font-weight: bold;
     font-size: 35px;
     text-shadow: #00BFFF -1px -1px ;
-
 }
 #palavraSemIni{
     background: #F2F2F2;
     font-size: 40px;
     border-radius: 10px;
 }
+
+ #palavraSemIni-rima{
+     background: #F2F2F2;
+     padding-left: 10px;
+     padding-right: 10px;
+     font-size: 40px;
+     border-radius: 10px;
+     position: absolute;
+     top: 56%;
+     text-decoration: underline;
+     }
+
 .btn-info{
     border: 0;
-    width: 90px;
-    margin: 10px;
+    width: 100px;
+    margin: 20px;
     position: relative;
     float: none;
     cursor: pointer;
     display: inline-block;
     outline: none;
-}
+    font-size: 20px;
+    }
 
 .previous, .next{
      padding: 5px 15px;
@@ -540,6 +552,7 @@ textarea.form-control{
     padding: 5px;
     width: 35px;
     border: 0;
+    padding-bottom: 0px;
     padding-bottom: 0px;
     padding-top: 10px;
         background: -moz-linear-gradient(
@@ -692,11 +705,11 @@ textarea.form-control{
 .blue-circle-button {
     box-shadow: 2px 4px 0 2px rgba(0,0,0,0.1);
     border: .5em solid #9bc1ff;
-    font-size: 1em;
+    font-size: 18px;
     font-family: Raleway, Arial, sans-serif;
     border-radius: 50%;
-    height: 8em;
-    width: 8em;
+    height: 7.6em;
+    width: 7.6em;
     display: inline-block; 
     text-decoration: none !important;
 }
@@ -719,3 +732,33 @@ textarea.form-control{
 #botao {
     border-radius: 30px;
 }
+
+ .botao-grande{
+     font: bold 20px "Arial Black", Gadget, sans-serif;
+     font-style: normal;
+     color: #000;
+     background: #7FFFD4;
+     border: 2px solid #fff;
+     text-shadow: 0px 0px 5px #0d0d0d;
+     box-shadow: -2px 0px 8px #2e2300;
+     -moz-box-shadow: -2px 0px 12px #2e2300;
+     -webkit-box-shadow: -2px 0px 12px #2e2300;
+     border-radius: 0;
+     margin: 10px;
+     cursor: hand;
+     cursor: hand;
+     cursor: hand;
+     height: 50px;
+     text-transform: uppercase;
+     text-shadow: none;
+     transition: all ease-in-out 0.3s;
+     border-radius: 15px;
+     left: 30%;
+     position: relative;
+ }
+
+ #result{
+     font-size: 50px;
+     color: #9400D3;
+     text-shadow: 0px 0px 7px #FFFAFA
+ }

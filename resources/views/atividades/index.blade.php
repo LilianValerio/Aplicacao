@@ -16,15 +16,15 @@
 		<h1>{{$dependente->name}}</h1>
 			<div class="row">
 		        <div class="col-md-12">
-				    <a href="{{ route('home') }}" target=""><button class="btn blue-circle-button">Home<span class="blue-circle-greater-than"></span></button></a>
-					<a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>1]) }}"><button class="btn blue-circle-button">Iniciais<span class="blue-circle-greater-than"></span></button></a>
+				    <a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>1]) }}"><button class="btn blue-circle-button">Iniciais<span class="blue-circle-greater-than"></span></button></a>
 					<a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>2]) }}"><button class="btn blue-circle-button">Completar<span class="blue-circle-greater-than"></span></button></a>
+					<a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>3]) }}"><button class="btn blue-circle-button">Rimas<span class="blue-circle-greater-than"></span></button></a>
 		        </div>   
 			</div>
 
 			<div class="row">
 		        <div class="col-md-12">
-					<a href="#"><button class="btn blue-circle-button">Atividade 3<span class="blue-circle-greater-than"></span></button></a>
+					<a href="{{ route('home') }}" target=""><button class="btn blue-circle-button">Home<span class="blue-circle-greater-than"></span></button></a>
 					<a href="{{ route('dependentes.index')}}"><button class="btn blue-circle-button">Voltar<span class="blue-circle-greater-than"></span></button></a>
 				    <a href="{{ route('logout') }}"onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><button class="btn blue-circle-button">Sair<span class="blue-circle-greater-than"></span></button></a>
