@@ -1,21 +1,75 @@
-@extends('adminlte::page')
-
-@section('title', 'AdminLTE')
-
-@section('content_header')
-    <h1>Indicadores dos dependentes</h1>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | ChartJS</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
 <body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
 
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">RELATÓRIOS</li>
+        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        ChartJS
+        <small>Preview sample</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
     <section class="content">
       <div class="row">
         <div class="col-md-6">
           <!-- AREA CHART -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Atividade 1</h3>
+              <h3 class="box-title">Area Chart</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -25,15 +79,17 @@
             </div>
             <div class="box-body">
               <div class="chart">
-              <canvas id="areaChart" style="height: 251px; width: 514px;" width="514" height="251"></canvas>
+                <canvas id="areaChart" style="height:250px"></canvas>
               </div>
             </div>
+            <!-- /.box-body -->
           </div>
+          <!-- /.box -->
 
           <!-- DONUT CHART -->
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Atividade 3</h3>
+              <h3 class="box-title">Atividade 1</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -54,7 +110,7 @@
           <!-- LINE CHART -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Atividade 2</h3>
+              <h3 class="box-title">Line Chart</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -74,7 +130,7 @@
           <!-- BAR CHART -->
           <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">Comparativo</h3>
+              <h3 class="box-title">Bar Chart</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -98,7 +154,7 @@
 
     </section>
     <!-- /.content -->
-
+  </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -421,38 +477,14 @@
         value    : 700,
         color    : '#f56954',
         highlight: '#f56954',
-        label    : 'Chrome'
-      },
-      {
-        value    : 500,
-        color    : '#00a65a',
-        highlight: '#00a65a',
-        label    : 'IE'
-      },
-      {
-        value    : 400,
-        color    : '#f39c12',
-        highlight: '#f39c12',
-        label    : 'FireFox'
-      },
-      {
-        value    : 600,
-        color    : '#00c0ef',
-        highlight: '#00c0ef',
-        label    : 'Safari'
+        label    : 'Erros'
       },
       {
         value    : 300,
         color    : '#3c8dbc',
         highlight: '#3c8dbc',
-        label    : 'Opera'
+        label    : 'Acertos'
       },
-      {
-        value    : 100,
-        color    : '#d2d6de',
-        highlight: '#d2d6de',
-        label    : 'Navigator'
-      }
     ]
     var pieOptions     = {
       //Boolean - Whether we should show a stroke on each segment
@@ -525,9 +557,3 @@
 </script>
 </body>
 </html>
-
-@stop
-
-@section('content')
-    <p>Sinestesis - 2018</p>
-@stop
