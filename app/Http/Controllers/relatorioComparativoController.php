@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class relatorioController extends Controller
+use Illuminate\Http\Request;
+
+class relatorioComparativoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +12,12 @@ class relatorioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        return view('relatorios.home_relatorio');
+    {
+ 
+            return view('relatorios.relatorio_comparativo');
+        
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *

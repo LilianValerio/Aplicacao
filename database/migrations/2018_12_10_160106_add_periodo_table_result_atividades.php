@@ -26,7 +26,7 @@ class AddPeriodoTableResultAtividades extends Migration
     public function down()
     {
         Schema::table('result_atividades', function (Blueprint $table) {
-            $table->dropColumn('pediodo');
+            $table->dropColumn('periodo');
         });
     }
 }

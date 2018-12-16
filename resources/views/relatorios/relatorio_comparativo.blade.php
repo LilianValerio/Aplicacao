@@ -55,7 +55,7 @@
     <section class="content-header">
       <h1>
         Gerenciamento do Responsável- {{auth()->user()->name}}
-        <small>sinestesis-2018</small>
+        <small>-sinestesis - 2018</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -89,7 +89,7 @@
           <!-- DONUT CHART -->
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Atividade - Iniciais</h3>
+              <h3 class="box-title">Atividade 1</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -99,23 +99,6 @@
             </div>
             <div class="box-body">
               <canvas id="pieChart" style="height:250px"></canvas>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-           <!-- DONUT CHART -->
-           <div class="box box-danger">
-            <div class="box-header with-border">
-              <h3 class="box-title">Atividade 3</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <canvas id="pieChart3" style="height:250px"></canvas>
             </div>
             <!-- /.box-body -->
           </div>
@@ -144,10 +127,10 @@
           </div>
           <!-- /.box -->
 
-           <!-- DONUT CHART -->
-           <div class="box box-danger">
+          <!-- BAR CHART -->
+          <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">Atividade - Completar</h3>
+              <h3 class="box-title">Bar Chart</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -156,16 +139,18 @@
               </div>
             </div>
             <div class="box-body">
-              <canvas id="pieChart2" style="height:250px"></canvas>
+              <div class="chart">
+                <canvas id="barChart" style="height:230px"></canvas>
+              </div>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
+
         </div>
         <!-- /.col (RIGHT) -->
       </div>
       <!-- /.row -->
-      
 
     </section>
     <!-- /.content -->
@@ -405,17 +390,27 @@
     var areaChart       = new Chart(areaChartCanvas)
 
     var areaChartData = {
-      labels  : ['atv 1', 'atv 2', 'atv 3',],
+      labels  : ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [
         {
-          label               : 'Digital Goods',
+          label               : 'Electronics',
           fillColor           : 'rgba(210, 214, 222, 1)',
           strokeColor         : 'rgba(210, 214, 222, 1)',
           pointColor          : 'rgba(210, 214, 222, 1)',
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [10, 80, 10]
+          data                : [65, 59, 80, 81, 56, 55, 40]
+        },
+        {
+          label               : 'Digital Goods',
+          fillColor           : 'rgba(60,141,188,0.9)',
+          strokeColor         : 'rgba(60,141,188,0.8)',
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : [28, 48, 40, 19, 86, 27, 90]
         }
       ]
     }
@@ -479,54 +474,6 @@
     var pieChart       = new Chart(pieChartCanvas)
     var PieData        = [
       {
-        value    : 500,
-        color    : '#f56954',
-        highlight: '#f56954',
-        label    : 'Erros'
-      },
-      {
-        value    : 500,
-        color    : '#3c8dbc',
-        highlight: '#3c8dbc',
-        label    : 'Acertos'
-      },
-    ]
-    var pieOptions     = {
-      //Boolean - Whether we should show a stroke on each segment
-      segmentShowStroke    : true,
-      //String - The colour of each segment stroke
-      segmentStrokeColor   : '#fff',
-      //Number - The width of each segment stroke
-      segmentStrokeWidth   : 2,
-      //Number - The percentage of the chart that we cut out of the middle
-      percentageInnerCutout: 50, // This is 0 for Pie charts
-      //Number - Amount of animation steps
-      animationSteps       : 100,
-      //String - Animation easing effect
-      animationEasing      : 'easeOutBounce',
-      //Boolean - Whether we animate the rotation of the Doughnut
-      animateRotate        : true,
-      //Boolean - Whether we animate scaling the Doughnut from the centre
-      animateScale         : false,
-      //Boolean - whether to make the chart responsive to window resizing
-      responsive           : true,
-      // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio  : true,
-      //String - A legend template
-      legendTemplate       : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
-    }
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    pieChart.Doughnut(PieData, pieOptions)
-
-    //-------------
-    //- PIE CHART -
-    //-------------
-    // Get context with jQuery - using jQuery's .get() method.
-    var pieChartCanvas = $('#pieChart2').get(0).getContext('2d')
-    var pieChart       = new Chart(pieChartCanvas)
-    var PieData        = [
-      {
         value    : 700,
         color    : '#f56954',
         highlight: '#f56954',
@@ -566,55 +513,6 @@
     //Create pie or douhnut chart
     // You can switch between pie and douhnut using the method below.
     pieChart.Doughnut(PieData, pieOptions)
-
-     //-------------
-    //- PIE CHART -
-    //-------------
-    // Get context with jQuery - using jQuery's .get() method.
-    var pieChartCanvas = $('#pieChart3').get(0).getContext('2d')
-    var pieChart       = new Chart(pieChartCanvas)
-    var PieData        = [
-      {
-        value    : 700,
-        color    : '#f56954',
-        highlight: '#f56954',
-        label    : 'Erros'
-      },
-      {
-        value    : 300,
-        color    : '#3c8dbc',
-        highlight: '#3c8dbc',
-        label    : 'Acertos'
-      },
-    ]
-    var pieOptions     = {
-      //Boolean - Whether we should show a stroke on each segment
-      segmentShowStroke    : true,
-      //String - The colour of each segment stroke
-      segmentStrokeColor   : '#fff',
-      //Number - The width of each segment stroke
-      segmentStrokeWidth   : 2,
-      //Number - The percentage of the chart that we cut out of the middle
-      percentageInnerCutout: 50, // This is 0 for Pie charts
-      //Number - Amount of animation steps
-      animationSteps       : 100,
-      //String - Animation easing effect
-      animationEasing      : 'easeOutBounce',
-      //Boolean - Whether we animate the rotation of the Doughnut
-      animateRotate        : true,
-      //Boolean - Whether we animate scaling the Doughnut from the centre
-      animateScale         : false,
-      //Boolean - whether to make the chart responsive to window resizing
-      responsive           : true,
-      // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio  : true,
-      //String - A legend template
-      legendTemplate       : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<segments.length; i++){%><li><span style="background-color:<%=segments[i].fillColor%>"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>'
-    }
-    //Create pie or douhnut chart
-    // You can switch between pie and douhnut using the method below.
-    pieChart.Doughnut(PieData, pieOptions)
-
 
     //-------------
     //- BAR CHART -

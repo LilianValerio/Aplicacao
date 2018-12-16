@@ -18,6 +18,8 @@ Route::resources([
     'home' => 'HomeController',
     'profissional' => 'userProfissionalController',
     'relatorio' => 'relatorioController',
+    'relatorioAcompanhamento' => 'relatorioAcompanhamentoController',
+    'relatorioComparativo' => 'relatorioComparativoController',
     'associar'=> 'dependentes_ProController'
      ]);
 

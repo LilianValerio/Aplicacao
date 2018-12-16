@@ -1,22 +1,95 @@
-@extends('adminlte::page')
-
-@section('title', 'AdminLTE')
-
-@section('content_header')
-    <h1>Indicadores dos dependentes</h1>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | ChartJS</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../../bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
 <body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
 
-  <div class="">
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">RELATÓRIOS</li>
+        <li><a href="{{ route('relatorio.index') }}"><i class="fa fa-circle-o text-red"></i> <span>Execução</span></a></li>
+        <li><a href="{{ route('relatorioComparativo.index') }}"><i class="fa fa-circle-o text-yellow"></i> <span>Comparativo</span></a></li>
+        <li><a href="{{ route('relatorioAcompanhamento.index') }}"><i class="fa fa-circle-o text-aqua"></i> <span>TimeLine</span></a></li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Gerenciamento do Responsável- {{auth()->user()->name}}
+        <small>-sinestesis - 2018</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
     <section class="content">
-      
+      <div class="row">
         <div class="col-md-6">
-          
+          <!-- AREA CHART -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Area Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="areaChart" style="height:250px"></canvas>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
           <!-- DONUT CHART -->
           <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Preencha as inicias</h3>
+              <h3 class="box-title">Atividade 1</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -30,8 +103,67 @@
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-      </section>
+
+        </div>
+        <!-- /.col (LEFT) -->
+        <div class="col-md-6">
+          <!-- LINE CHART -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Line Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="lineChart" style="height:250px"></canvas>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+          <!-- BAR CHART -->
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Bar Chart</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="chart">
+                <canvas id="barChart" style="height:230px"></canvas>
+              </div>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+
+        </div>
+        <!-- /.col (RIGHT) -->
+      </div>
+      <!-- /.row -->
+
+    </section>
     <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
+
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Create the tabs -->
@@ -229,12 +361,17 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="bower_components/chart.js/Chart.js"></script>
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
-<script src="dist/js/adminlte.min.js"></script>
-<script src="dist/js/demo.js"></script>
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- ChartJS -->
+<script src="../../bower_components/chart.js/Chart.js"></script>
+<!-- FastClick -->
+<script src="../../bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
 <!-- page script -->
 <script>
   $(function () {
@@ -420,8 +557,3 @@
 </script>
 </body>
 </html>
-
-@stop
-
-@section('content')
-@stop
