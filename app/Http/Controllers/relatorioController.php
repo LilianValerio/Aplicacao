@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\ResultAtividade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +15,13 @@ class relatorioController extends Controller
      */
     public function index()
     { 
-        return view('relatorios.home_relatorio');
+        $id = Auth::id();
+        $users = \App\User::find($id);
+        $dependente =  $users->dependentes;
+
+        $atvGenerico = \App\ResultAtividade; 
+        $atividade1 = $atvGenerico -> dependentes;
+        return view('relatorios.home_relatorio',compact('atividade1'));
     }
     
     /**
