@@ -19,9 +19,40 @@ class relatorioController extends Controller
         $users = \App\User::find($id);
         $dependente =  $users->dependentes;
 
-        $atvGenerico = \App\ResultAtividade; 
-        $atividade1 = $atvGenerico -> dependentes;
-        return view('relatorios.home_relatorio',compact('atividade1'));
+        foreach ($dependente as &$value) {
+            $idDependente = $value['id'];
+            $name = $value['name'];
+            $result = \App\ResultAtividade::where('dependente_id', $idDependente)->get()->first();
+    
+            $atividadeID =   $result -> atividade_id;
+            $acertos1 = 1;
+            $erros1 = 1;
+            $acertos2 = 1;
+            $erros2 = 1;
+            $acertos3 = 1;
+            $erros3 = 1;
+
+            if($atividadeID == 1){
+                $acertos1 = $result -> acertos;
+                $erros1 = $result -> erros;
+            }
+
+            if($atividadeID == 2){
+                $acertos2 = $result -> acertos;
+                $erros2 = $result -> erros;
+            }
+
+            if($atividadeID == 3){
+                $acertos3 = $result -> acertos;
+                $erros3 = $result -> erros;
+            }
+
+
+    
+        }
+
+        return view('relatorios.home_relatorio',compact('acertos1', 'erros1','acertos2', 
+        'erros2','acertos3', 'erros3' , 'name'));
     }
     
     /**

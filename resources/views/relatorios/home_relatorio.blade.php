@@ -55,6 +55,7 @@
     <section class="content-header">
       <h1>
         Gerenciamento do Responsável- {{auth()->user()->name}}
+        - Dependente {{$name}}
         <small>sinestesis-2018</small>
       </h1>
       <ol class="breadcrumb">
@@ -69,7 +70,7 @@
           <!-- AREA CHART -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Area Chart</h3>
+              <h3 class="box-title">Atividades Executadas</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -127,7 +128,7 @@
           <!-- LINE CHART -->
           <div class="box box-info">
             <div class="box-header with-border">
-              <h3 class="box-title">Line Chart</h3>
+              <h3 class="box-title">TimeLine - Atividades Executadas</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -479,13 +480,13 @@
     var pieChart       = new Chart(pieChartCanvas)
     var PieData        = [
       {
-        value    : 500,
+        value    : {{$erros1}},
         color    : '#f56954',
         highlight: '#f56954',
         label    : 'Erros'
       },
       {
-        value    : 500,
+        value    : {{$acertos1}},
         color    : '#3c8dbc',
         highlight: '#3c8dbc',
         label    : 'Acertos'
@@ -527,13 +528,13 @@
     var pieChart       = new Chart(pieChartCanvas)
     var PieData        = [
       {
-        value    : 700,
+        value    : {{$erros2}},
         color    : '#f56954',
         highlight: '#f56954',
         label    : 'Erros'
       },
       {
-        value    : 300,
+        value    : {{$acertos2}},
         color    : '#3c8dbc',
         highlight: '#3c8dbc',
         label    : 'Acertos'
@@ -575,13 +576,13 @@
     var pieChart       = new Chart(pieChartCanvas)
     var PieData        = [
       {
-        value    : 700,
+        value    : {{$erros3}},
         color    : '#f56954',
         highlight: '#f56954',
         label    : 'Erros'
       },
       {
-        value    : 300,
+        value    : {{$acertos3}},
         color    : '#3c8dbc',
         highlight: '#3c8dbc',
         label    : 'Acertos'
