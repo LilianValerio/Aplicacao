@@ -53,18 +53,24 @@ class relatorioController extends Controller
         $name = $dependente['name'];
         $consulta = \App\ResultAtividade::where('dependente_id', $idDependente)->get();
 
+        $acertos1 = 0;
+        $erros1 = 0;
+        $acertos2 = 0;
+        $erros2 = 0;
+        $acertos3 = 0;
+        $erros3 = 0;
+        $naoexecutada1 = 0;
+        $naoexecutada2 = 0;
+        $naoexecutada3 = 0;
+
         foreach($consulta as $result){
         $atividadeID =   $result ['atividade_id'];
-        $acertos1 = 1;
-        $erros1 = 1;
-        $acertos2 = 1;
-        $erros2 = 1;
-        $acertos3 = 1;
-        $erros3 = 1;
-
         if($atividadeID == 1){
-            $acertos1 = $result ['acertos'];
+            $acerto = $acertos1 + $result ['acertos'];
+            $acertos1 =  $acerto;
             $erros1 = $result ['erros'];
+        }else{
+
         }
 
         if($atividadeID == 2){
