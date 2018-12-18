@@ -17,9 +17,11 @@ class dependentes_ProController extends Controller
         
         $id = Auth::id();
         $users = \App\User::find($id);
-
         $dependente =  $users->dependentes;
-        return view('dependente.dependentes_pro',compact('dependente'));
+
+        $consult = \App\UsersRelationship::where('user_id', $id)->get()->first();
+
+        return view('dependente.dependentes_pro',compact('dependente', 'consult'));
 
     }
 

@@ -21,12 +21,30 @@
           </div>
       @endif
 
+<div class="jumbotron-table">
+      <h1> Solicitações de novos Pacientes</h1>
+      <div class="table-rolagem">
+          <table class="table table-hover table-responsive" id="tabela">
+
+              <thead>
+              <tr>
+                <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span></th>
+                <th class="table-nome">Usuário</th>
+                <th class="table-old-2">Autorizar</th>
+              </tr>
+              </thead>
+              </table>
+              </div>
+ 
+
+</div>
+
     <div class="jumbotron-table">
       <h1> Meus Pacientes</h1>
 
 
         <div class="table-rolagem">
-          <table class="table table-hover table-responsive">
+          <table class="table table-hover table-responsive"  id="tabela1">
 
               <thead>
               <tr>
@@ -60,7 +78,7 @@
                         </form>
 
                      </td>
-                  </tr>
+                  </tr>        
                 @endforeach
 
               </tbody>
