@@ -35,9 +35,9 @@
                     <label>Tipo de Distúrbio</label>
                       <select class="form-control" name="disturbio_id" required = "required">
                         <option value="" disabled="" selected>Selecione</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="1">Escrita</option>
+                        <option value="2">Leitura</option>
+                        <option value="3">Fonética</option>
                       </select>
                 </div>
                 <div class="form-group">

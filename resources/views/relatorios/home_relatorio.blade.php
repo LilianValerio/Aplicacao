@@ -59,7 +59,7 @@
         <small>sinestesis-2018</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="home"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="{{ route('relatorio.index') }}"><i class="fa fa-dashboard"></i> Home</a></li>
       </ol>
     </section>
 

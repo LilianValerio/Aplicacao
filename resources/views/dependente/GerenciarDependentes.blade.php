@@ -34,7 +34,7 @@
                 <th class="table-nome">Nome</th>
                 <th class="table-perfil">Data nasc</th>
                 <th class="table-data">Sexo</th>
-                <th class="table-data">Obs.</th>
+                <th class="table-data">Relatório</th>
                 <th class="table-old-2">Editar</th>
                 <th class="table-old-2">Deletar</th>
                 <th class="table-old-2">Exercícios</th>
@@ -48,7 +48,11 @@
                     <td>{{$dependente_['name']}}</td>
                     <td>{{$dependente_['dt_nascimento']}}</td>
                     <td>{{$sexo = $dependente_['sexo']== 'M' ?  'Masculino' : 'Feminino'}}</td>
-                      <td>{{$dependente_['texto_extra']}}</td>
+                    <td>
+
+<a href="{{ route('relatorio.show', ['id'=>$dependente_->id]) }}"><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-book"></span></button></a>
+
+</td>
                     {{--<td>{{$dependente_['name']}}</td>--}}
                      <th><a href="{{ route('dependentes.edit', ['id'=>$dependente_->id]) }}"><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a></th>
 
