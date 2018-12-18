@@ -12,6 +12,29 @@
 </head>
 <body class="atv">
 
+{{--Recuperando as palavras do DB--}}
+@php
+    $array = array ();
+    $array3 = array ();
+@endphp
+@foreach($palavra as $palavras)
+    @php
+        array_push($array, $palavras->name);
+        array_push($array3, $palavras->srcimg);
+        $palavras_texto = implode("|", $array);
+        $palavras_texto_imagem = implode("|", $array3);
+    @endphp
+@endforeach
+{{--Atribuindo as palavras à uma variavel JS--}}
+<script type="text/javascript">
+    var palavra_texto = '<?php echo $palavras_texto; ?>';
+    var palavra = palavra_texto.split("|");
+    var palavra_texto_imagem = '<?php echo $palavras_texto_imagem; ?>';
+    var palavra_imagem = palavra_texto_imagem.split("|");
+
+</script>
+
+
 <div class="container">
     <div class="jumbotron">
 
@@ -21,30 +44,16 @@
 
             <div class="bgw">
 
-                {{--Recuperando as palavras do DB--}}
-                @php
-                    $array = array ();
-                @endphp
-                @foreach($palavra as $palavras)
-                    @php
-                        array_push($array, $palavras->name);
-                        $palavras_texto = implode("|", $array);
-                    @endphp
-                @endforeach
-                {{--Atribuindo as palavras à uma variavel JS--}}
-                <script type="text/javascript">
-                    var palavra_texto = '<?php echo $palavras_texto; ?>';
-                    var palavra = palavra_texto.split("|");
+                <p id="p">Qual a inicial desta palavra?</p>
 
-                </script>
+                <div class="palavra-imagem">
+                    <img id="imagem-palavra" src="" >
+                    <br><p id="palavraSemIni"></p>
+                </div>
 
-                <p id="p">Descubra a inicial das palavras</p>
-
-                <p id="palavraSemIni"></p>
-
-                <p id="palavraComIni"></p>
+                <br>
                 <p id="result"></p>
-                <h2 id="fim"></h2>
+                <p id="fim"></p>
 
             </div>
             <div class="row">
@@ -58,18 +67,19 @@
             <div class="row">
                 <div class="col-xs-12">
                     <a class="btn btn-info" id="proximo" onclick="carrega_pagina()">próximo</a>
-                    <a class="btn btn-info" id="voltar" href="{{ route('atividades', $dependente->id) }}">voltar</a>
+                    <form action="{{route('resultatividades.update', ['id'=> $idresult, 'id_dep'=> $dependente->id])}}" method="post">
+                        @csrf
+                        @method('put')
+                        <input type="hidden" name="acertos" id = "acertos" value="0">
+                        <input type="hidden" name="erros" id = "erros" value="0">
+                        <input type="hidden" name="status" id = "status" value="abandonada">
+                        <button type="submit" id="voltar" class="btn btn-info">Voltar</button>
+                    </form>
                 </div>
             </div>
 
 
-            <form action="{{route('resultatividades.update', ['id'=> $idresult, 'id_dep'=> $dependente->id])}}" method="post" id="form">
-                @csrf
-                @method('put')
-                <input type="hidden" name="acertos" id = "acertos">
-                <input type="hidden" name="erros" id = "erros">
-                <button type="submit" class="btn btn-secondary">Voltar</button>
-            </form>
+
 
         </center>
 

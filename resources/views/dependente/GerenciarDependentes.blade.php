@@ -30,21 +30,21 @@
 
               <thead>
               <tr>
-                <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span></th>
+                <th class="table-old"><span> </span></th>
                 <th class="table-nome">Nome</th>
                 <th class="table-perfil">Data nasc</th>
                 <th class="table-data">Sexo</th>
-                  <th class="table-data">Obs.</th>
+                <th class="table-data">Obs.</th>
                 <th class="table-old-2">Editar</th>
                 <th class="table-old-2">Deletar</th>
-                <th class="table-old-2">Jogar</th>
+                <th class="table-old-2">Exercícios</th>
               </tr>
               </thead>
               <tbody>
                 @forelse($dependente as $dependente_)
 
                   <tr>
-                    <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span></th>
+                    <th class="table-old"><span class="glyphicon glyphicon-user"> </span></th>
                     <td>{{$dependente_['name']}}</td>
                     <td>{{$dependente_['dt_nascimento']}}</td>
                     <td>{{$sexo = $dependente_['sexo']== 'M' ?  'Masculino' : 'Feminino'}}</td>
@@ -61,7 +61,7 @@
                         </form>
 
                      </td>
-                     <td><a href="{{ route('atividades', $dependente_->id) }}"><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" >{{ $dependente_->id }}</button></a></td>
+                     <td><a href="{{ route('atividades', $dependente_->id) }}"><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-tasks"></span></button></a></td>
                   </tr>
                 @empty
                     <script>

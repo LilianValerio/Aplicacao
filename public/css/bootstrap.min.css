@@ -386,7 +386,12 @@ td, th {
 }
 
 .glyphicon-trash:before {
-    content: "\e020"
+    content: "\e020";
+}
+
+.glyphicon-lectio:before {
+    content:  url(../img/favicon.ico);
+    background-size: 20px;
 }
 
 .glyphicon-home:before {

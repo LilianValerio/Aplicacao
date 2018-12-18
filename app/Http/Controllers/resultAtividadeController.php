@@ -89,7 +89,7 @@ class resultAtividadeController extends Controller
         $result = \App\ResultAtividade::findOrFail($id);
         $result -> acertos = $request->get('acertos');
         $result -> erros = $request->get('erros');
-        $result -> status = 'finalizado';
+        $result -> status = $request->get('status');
         $result -> save();
 
         return redirect()->route('atividades', ['id'=> $id_dep]);

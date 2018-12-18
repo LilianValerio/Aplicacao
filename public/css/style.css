@@ -249,13 +249,13 @@ nav.menu{
         color: orange;
     }
     .logo{
-        background-image: url(../img/LOGO.png);
+        background-image: url(../img/LOGO.jpg);
         background-size: top center;
         background-repeat: no-repeat;
         background-size: 250px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 150px;
+        margin-top: 70px;
         margin-bottom: 0px;
         width: 300px;
         height: 190px;
@@ -494,22 +494,6 @@ textarea.form-control{
     font-size: 35px;
     text-shadow: #00BFFF -1px -1px ;
 }
-#palavraSemIni{
-    background: #F2F2F2;
-    font-size: 40px;
-    border-radius: 10px;
-}
-
- #palavraSemIni-rima{
-     background: #F2F2F2;
-     padding-left: 10px;
-     padding-right: 10px;
-     font-size: 40px;
-     border-radius: 10px;
-     position: absolute;
-     top: 56%;
-     text-decoration: underline;
-     }
 
 .btn-info{
     border: 0;
@@ -689,7 +673,7 @@ textarea.form-control{
     padding: 40px;
     position: absolute;
     width: 500px;
-    top: 50%;
+    top: 10%;
     left: 50%;
     text-decoration: none;
     transform: translateX(-50%);
@@ -737,7 +721,7 @@ textarea.form-control{
      font: bold 20px "Arial Black", Gadget, sans-serif;
      font-style: normal;
      color: #000;
-     background: #7FFFD4;
+     background: transparent;
      border: 2px solid #fff;
      text-shadow: 0px 0px 5px #0d0d0d;
      box-shadow: -2px 0px 8px #2e2300;
@@ -746,19 +730,57 @@ textarea.form-control{
      border-radius: 0;
      margin: 10px;
      cursor: hand;
-     cursor: hand;
-     cursor: hand;
      height: 50px;
      text-transform: uppercase;
      text-shadow: none;
      transition: all ease-in-out 0.3s;
      border-radius: 15px;
-     left: 30%;
-     position: relative;
- }
+}
 
  #result{
-     font-size: 50px;
+     font-size: 40px;
      color: #9400D3;
      text-shadow: 0px 0px 7px #FFFAFA
+ }
+
+ #fim{
+     font-size: 30px;
+     color: #9400D3;
+     text-shadow: 0px 0px 7px #FFFAFA
+ }
+
+ #imagem-palavra{
+     width: 120px;
+     height: 100px;
+     border: 2px solid #fff;
+     border-radius: 16px;
+     /*position: absolute;*/
+     /*left: 30%;*/
+     float: left;
+}
+
+ .palavra-imagem{
+     alignment: center;
+     /*position: absolute;*/
+ }
+
+ #palavraSemIni{
+     background: #F2F2F2;
+     font-size: 40px;
+     padding-left: 10px;
+     padding-right: 10px;
+     border-radius: 10px;
+     /*left: 150%;*/
+     /*position: relative;*/
+}
+
+ #palavraSemIni-rima{
+     background: #F2F2F2;
+     padding-left: 10px;
+     padding-right: 10px;
+     font-size: 40px;
+     border-radius: 10px;
+     position: absolute;
+     top: 56%;
+     text-decoration: underline;
  }

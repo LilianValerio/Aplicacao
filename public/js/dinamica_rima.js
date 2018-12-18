@@ -2,12 +2,10 @@ var contAcertos = 0;
 var contErros = 0;
 var rodadas = 5; //delimita a quant de rodadas
 var contRodadas = 1;
+var status = 'abandonada';
 var letraIn;
 var letraBotao = []; //array para armazenar letras nos botões
-var palavraSemLetra;
 var letra;
-var alfa = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"];
-document.getElementById('form').style.display = 'none';
 
 function carrega_pagina() {
 
@@ -54,7 +52,7 @@ function carrega_pagina() {
 
     habilitarBotao();
     document.getElementById("imagem-palavra").src= palavraImagemSort;
-    document.getElementById("palavraSemIni-rima").innerHTML = palavraSort;
+    document.getElementById("palavraSemIni").innerHTML = palavraSort;
     document.getElementById('b1').innerHTML = letraBotao[0];
     document.getElementById('b2').innerHTML = letraBotao[1];
     document.getElementById('b3').innerHTML = letraBotao[2];
@@ -78,20 +76,23 @@ function verify() {
         document.getElementById("result").innerHTML = "Se enganou, tente novamente!";
         contErros += 1;
         }
-
-    document.getElementById("palavraSemIni-rima").innerHTML = letraIn;
+    document.getElementById("palavraSemIni").innerHTML = letraIn;
+    document.getElementById("erros").value = contErros;
+    document.getElementById("acertos").value = contAcertos;
 }
 
 function desabilitarBotao() {
     document.getElementById('b1').style.display = 'none';
     document.getElementById('b2').style.display = 'none';
     document.getElementById('b3').style.display = 'none';
+    document.getElementById('proximo').style.display = 'block';
 }
 
 function habilitarBotao() {
-    document.getElementById('b1').style.display = 'inline';
+    document.getElementById('b1').style.display = 'block';
     document.getElementById('b2').style.display = 'inline';
     document.getElementById('b3').style.display = 'inline';
+    document.getElementById('proximo').style.display = 'none';
 }
 
 function botao(escolha) {
@@ -103,13 +104,11 @@ function botao(escolha) {
     if (contRodadas < rodadas) {
         contRodadas += 1;
     }else {
-        document.getElementById("fim").innerHTML = "Parabéns!!! você Terminou clique em voltar para o painel de atividades!!! " + "<br>" + "Acertos = " + contAcertos + "<br>" + "Erros = " + contErros;
-        document.getElementById("form").style.display = "block";
+        status = 'concluída';
+        document.getElementById("fim").innerHTML = "Muito bem! você Terminou clique em voltar para o painel de atividades!!!";
         document.getElementById('proximo').onclick = "disabled";
-        document.getElementById("acertos").value = contAcertos;
-        document.getElementById("erros").value = contErros;
         document.getElementById('proximo').style.display = 'none';
-        document.getElementById('voltar').style.display = 'none';
+        document.getElementById("status").value = status;
     }
 }
 

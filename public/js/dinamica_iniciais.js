@@ -1,13 +1,13 @@
 var contAcertos = 0;
 var contErros = 0;
 var rodadas = 5; //delimita a quant de rodadas
+var status = 'abandonada';
 var contRodadas = 1;
 var inicialIn;
 var letraBotao = []; //array para armazenar letras nos botões
 var palavraSemIni;
 var inicial;
 var alfa = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"];
-document.getElementById('form').style.display = 'none';
 
 function carrega_pagina() {
 
@@ -16,7 +16,7 @@ function carrega_pagina() {
     var x = Math.floor(Math.random() * palavra.length); //atribui uma posição aleatórea do array
     var botaoCorreto = Math.floor(Math.random() * 3);  //
     palavraSemIni = palavra[x].slice(1); //cria palavra sem inicial
-
+    palavraImagemSort = palavra_imagem[x];
 
     var count1 = 0; //contador
     //cria um array com as letras da palavra
@@ -45,6 +45,7 @@ function carrega_pagina() {
 
 
     habilitarBotao();
+    document.getElementById("imagem-palavra").src= palavraImagemSort;
     document.getElementById("palavraSemIni").innerHTML = '_' + palavraSemIni;
     document.getElementById('b1').innerHTML = letraBotao[0];
     document.getElementById('b2').innerHTML = letraBotao[1];
@@ -64,23 +65,27 @@ function verify() {
         document.getElementById("result").innerHTML = "Acertou!!!";
         contAcertos += 1;
         } else {
-        document.getElementById("result").innerHTML = "Se enganou, tente novamente!";
+        document.getElementById("result").innerHTML = "Ah que pena, a letra certa é "+ letras[0].toUpperCase();
         contErros += 1;
         }
 
     document.getElementById("palavraSemIni").innerHTML = inicialIn.toUpperCase() + palavraSemIni;
+    document.getElementById("acertos").value = contAcertos;
+    document.getElementById("erros").value = contErros;
 }
 
 function desabilitarBotao() {
     document.getElementById('b1').style.display = 'none';
     document.getElementById('b2').style.display = 'none';
     document.getElementById('b3').style.display = 'none';
+    document.getElementById('proximo').style.display = 'block';
 }
 
 function habilitarBotao() {
     document.getElementById('b1').style.display = 'block';
     document.getElementById('b2').style.display = 'inline';
     document.getElementById('b3').style.display = 'inline';
+    document.getElementById('proximo').style.display = 'none';
 }
 
 function botao(escolha) {
@@ -92,13 +97,11 @@ function botao(escolha) {
     if (contRodadas < rodadas) {
         contRodadas += 1;
     }else {
+        status = 'concluída';
         document.getElementById("fim").innerHTML = "Muito bem! você Terminou clique em voltar para o painel de atividades!!!";
-        document.getElementById("form").style.display = "block";
         document.getElementById('proximo').onclick = "disabled";
-        document.getElementById("acertos").value = contAcertos;
-        document.getElementById("erros").value = contErros;
         document.getElementById('proximo').style.display = 'none';
-        document.getElementById('voltar').style.display = 'none';
+        document.getElementById("status").value = status;
     }
 }
 
