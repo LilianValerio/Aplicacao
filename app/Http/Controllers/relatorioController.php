@@ -51,9 +51,10 @@ class relatorioController extends Controller
 
         $idDependente = $dependente['id'];
         $name = $dependente['name'];
-        $result = \App\ResultAtividade::where('dependente_id', $idDependente)->get()->first();
+        $consulta = \App\ResultAtividade::where('dependente_id', $idDependente)->get();
 
-        $atividadeID =   $result -> atividade_id;
+        foreach($consulta as $result){
+        $atividadeID =   $result ['atividade_id'];
         $acertos1 = 1;
         $erros1 = 1;
         $acertos2 = 1;
@@ -62,20 +63,21 @@ class relatorioController extends Controller
         $erros3 = 1;
 
         if($atividadeID == 1){
-            $acertos1 = $result -> acertos;
-            $erros1 = $result -> erros;
+            $acertos1 = $result ['acertos'];
+            $erros1 = $result ['erros'];
         }
 
         if($atividadeID == 2){
-            $acertos2 = $result -> acertos;
-            $erros2 = $result -> erros;
+            $acertos2 = $result['acertos'];
+            $erros2 = $result ['erros'];
         }
 
         if($atividadeID == 3){
-            $acertos3 = $result -> acertos;
-            $erros3 = $result -> erros;
+            $acertos3 = $result ['acertos'];
+            $erros3 = $result ['erros'];
         }
 
+    }
     return view('relatorios.home_relatorio',compact('acertos1', 'erros1','acertos2', 
     'erros2','acertos3', 'erros3' , 'name'));
     }
