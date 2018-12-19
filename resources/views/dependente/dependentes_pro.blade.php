@@ -35,6 +35,27 @@
               </thead>
               </table>
               </div>
+
+                            <tbody>
+                @forelse($consult as $consult_)
+
+                  <tr>
+                    <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span></th>
+
+                      <td>{{$consult_['user_id']}}</td>
+                      <td>
+                      <th><a href="{{ route('associar.update', ['id'=>$consult_->id]) }}"><button class="checkthis" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></a></th>
+                      </td>
+                  </tr> 
+                  @empty
+                    <script>
+                        document.getElementById('tabela').innerHTML = 'Não existem novas Solicitações!';
+                        document.getElementById('tabela').style.textAlign = 'center';
+                        document.getElementById('tabela').style.fontSize = '30px';
+                    </script>       
+                @endforelse
+
+              </tbody>
  
 
 </div>
@@ -58,7 +79,7 @@
               </tr>
               </thead>
               <tbody>
-                @foreach($dependente as $dependente_)
+                @forelse($dependente as $dependente_)
 
                   <tr>
                     <th class="table-old"><span class="glyphicon glyphicon-asterisk"> </span></th>
@@ -78,8 +99,14 @@
                         </form>
 
                      </td>
-                  </tr>        
-                @endforeach
+                  </tr> 
+                  @empty
+                    <script>
+                        document.getElementById('tabela1').innerHTML = 'Não existem Pacientes Vinculados!';
+                        document.getElementById('tabela1').style.textAlign = 'center';
+                        document.getElementById('tabela1').style.fontSize = '30px';
+                    </script>            
+                @endforelse
 
               </tbody>
         </table>

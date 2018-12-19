@@ -19,7 +19,11 @@ class dependentes_ProController extends Controller
         $users = \App\User::find($id);
         $dependente =  $users->dependentes;
 
-        $consult = \App\UsersRelationship::where('user_id', $id)->get()->first();
+        $consult = \App\UserProfissional::where('user_id', $id)->get()->first();
+        $profissionalId = $consult -> id;
+        
+        $consult = \App\UsersRelationship::where('user_profissional_id', $profissionalId)->get();
+
 
         return view('dependente.dependentes_pro',compact('dependente', 'consult'));
 
