@@ -107,7 +107,7 @@
            <!-- DONUT CHART -->
            <div class="box box-danger">
             <div class="box-header with-border">
-              <h3 class="box-title">Atividade 3</h3>
+              <h3 class="box-title">Rimas</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -409,24 +409,24 @@
       labels  : ['atividade 1', 'atividade 2', 'atividade 3',],
       datasets: [ 
  {
-          label               : 'Electronics',
+          label               : 'Acertos',
           fillColor           : 'rgba(210, 214, 222, 1)',
           strokeColor         : 'rgba(210, 214, 222, 1)',
           pointColor          : 'rgba(210, 214, 222, 1)',
           pointStrokeColor    : '#c1c7d1',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [56, 55, 40]
+          data                : [{{$acertos1}},{{$acertos2}},{{$acertos3}}]
         },
         {
-          label               : 'Digital Goods',
+          label               : 'Erros',
           fillColor           : 'rgba(60,141,188,0.9)',
           strokeColor         : 'rgba(60,141,188,0.8)',
           pointColor          : '#3b8bba',
           pointStrokeColor    : 'rgba(60,141,188,1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : [28, 48, 40]
+          data                : [{{$erros1}},{{$erros2}},{{$erros3}}]
         }
       ]
     }
@@ -501,6 +501,13 @@
         highlight: '#3c8dbc',
         label    : 'Acertos'
       },
+      {
+        value    : {{$naoexecutada1}},
+        color    : '#6f116f',
+        highlight: '#6f116f',
+        label    : 'Sem Resultados'
+      },
+
     ]
     var pieOptions     = {
       //Boolean - Whether we should show a stroke on each segment
@@ -549,6 +556,12 @@
         highlight: '#3c8dbc',
         label    : 'Acertos'
       },
+      {
+        value    : {{$naoexecutada2}},
+        color    : '#6f116f',
+        highlight: '#6f116f',
+        label    : 'Sem Resultados'
+      },
     ]
     var pieOptions     = {
       //Boolean - Whether we should show a stroke on each segment
@@ -596,6 +609,12 @@
         color    : '#3c8dbc',
         highlight: '#3c8dbc',
         label    : 'Acertos'
+      },
+      {
+        value    : {{$naoexecutada3}},
+        color    : '#6f116f',
+        highlight: '#6f116f',
+        label    : 'Sem Resultados'
       },
     ]
     var pieOptions     = {

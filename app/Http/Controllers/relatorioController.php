@@ -68,24 +68,39 @@ class relatorioController extends Controller
         if($atividadeID == 1){
             $acerto = $acertos1 + $result ['acertos'];
             $acertos1 =  $acerto;
-            $erros1 = $result ['erros'];
-        }else{
-
+            $erro = $erros1 +$result ['erros']; 
+            $erros1 = $erro;
         }
 
         if($atividadeID == 2){
-            $acertos2 = $result['acertos'];
-            $erros2 = $result ['erros'];
+            $acert =  $acertos2 + $result['acertos'];
+            $acertos2 = $acert;
+            $err = $erros2 + $result ['erros'];
+            $erros2 = $err;
         }
 
         if($atividadeID == 3){
-            $acertos3 = $result ['acertos'];
-            $erros3 = $result ['erros'];
+            $acertt = $acertos3 + $result ['acertos'];
+            $acertos3 = $acertt;
+            $erross = $erros3 + $result ['erros'];
+            $erros3 = $erross;
         }
 
     }
+
+  if($erros1 == null && $acertos1){
+    $naoexecutada1 = 1;
+  } 
+  if($erros2 == null && $acertos2 == null){
+    $naoexecutada2 = 1;
+  }    
+  if($erros3 == null && $acertos3 == null){
+    $naoexecutada3 = 1;
+  }       
+  
+
     return view('relatorios.home_relatorio',compact('acertos1', 'erros1','acertos2', 
-    'erros2','acertos3', 'erros3' , 'name'));
+    'erros2','acertos3', 'erros3' , 'name', 'naoexecutada1', 'naoexecutada2', 'naoexecutada3'));
     }
 
     /**
