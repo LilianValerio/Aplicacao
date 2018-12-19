@@ -19,7 +19,11 @@ class AtividadeController extends Controller
         return view('atividades.index',compact('dependente'));
     }
 
-
+    public function tutorial($id)
+    {
+        $dependente = \App\Dependente::findOrFail($id);
+        return view('atividades.tutorial',compact('dependente'));
+    }
     public function dep_atividade($id, $id_atvd)
     {
         $dependente = \App\Dependente::findOrFail($id);

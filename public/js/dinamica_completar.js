@@ -55,8 +55,8 @@ function carrega_pagina() {
     document.getElementById('b2').innerHTML = letraBotao[1];
     document.getElementById('b3').innerHTML = letraBotao[2];
     document.getElementById("result").innerHTML = "";
-
-
+    document.getElementById("result2").innerHTML = "";
+    document.getElementById("palavraSemIni").style = "text-decoration: none";
 }
 
 carrega_pagina();
@@ -68,10 +68,11 @@ function verify() {
     letras[y]=letraIn;
 
     if (letraIn.toLowerCase() == letra) {
-        document.getElementById("result").innerHTML = "Acertou!!!";
+        document.getElementById("result").innerHTML = "Muito bem! Você acertou!";
         contAcertos += 1;
         } else {
-        document.getElementById("result").innerHTML = "Ah que pena, a letra certa é "+ letra;
+        document.getElementById("result2").innerHTML = "Ah que pena, a letra certa é \'"+ letra.toUpperCase() + "\'";
+        document.getElementById("palavraSemIni").style = "text-decoration: line-through";
         contErros += 1;
                 }
     document.getElementById("palavraSemIni").innerHTML = letras.join('');
@@ -103,10 +104,11 @@ function botao(escolha) {
         contRodadas += 1;
     }else {
         status = 'concluída';
-        document.getElementById("fim").innerHTML = "Muito bem! você Terminou clique em voltar para o painel de atividades!!!";
+        document.getElementById("fim").innerHTML = "Que legal, você terminou clique em voltar para o painel de atividades!!!";
         document.getElementById('proximo').onclick = "disabled";
         document.getElementById('proximo').style.display = 'none';
         document.getElementById("status").value = status;
+        document.getElementById("voltar").innerHTML = "Voltar";
     }
 }
 

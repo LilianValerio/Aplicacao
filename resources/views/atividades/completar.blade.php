@@ -52,6 +52,7 @@
 
                 <br>
                 <p id="result"></p>
+                <p id="result2"></p>
                 <p id="fim"></p>
 
             </div>
@@ -65,14 +66,14 @@
 
             <div class="row">
                 <div class="col-xs-12">
-                    <a class="btn btn-info" id="proximo" onclick="carrega_pagina()">próximo</a>
+                    <a class="btn btn-info" id="proximo" onclick="carrega_pagina()"><span class="glyphicon glyphicon-forward"></a>
                     <form action="{{route('resultatividades.update', ['id'=> $idresult, 'id_dep'=> $dependente->id])}}" method="post" >
                         @csrf
                         @method('put')
                         <input type="hidden" name="acertos" id = "acertos" value="0">
                         <input type="hidden" name="erros" id = "erros" value="0">
                         <input type="hidden" name="status" id = "status" value="abandonada">
-                        <button type="submit" class="btn btn-info">Voltar</button>
+                        <button type="submit" class="btn btn-info">Sair</button>
                     </form>
                 </div>
             </div>

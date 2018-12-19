@@ -10,21 +10,20 @@
 			</head>
 			<body>
 
-				<div class="logo"></div>
 	<div class="container">
 		<div class="jumbotron-x1">
-		<h1>{{$dependente->name}}</h1>
+		<h1>Olá {{$dependente->name}}, vamos brincar?</h1>
 			<div class="row">
 		        <div class="col-md-12">
-				    <a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>1]) }}"><button class="btn blue-circle-button">Iniciais<span class="blue-circle-greater-than"></span></button></a>
-					<a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>2]) }}"><button class="btn blue-circle-button">Completar<span class="blue-circle-greater-than"></span></button></a>
-					<a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>3]) }}"><button class="btn blue-circle-button">Rimas<span class="blue-circle-greater-than"></span></button></a>
+				    <a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>1]) }}"><button class="btn blue-circle-button">Descubra <br> as iniciais<span class="blue-circle-greater-than"></span></button></a>
+					<a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>2]) }}"><button class="btn blue-circle-button">Complete <br> as palavras<span class="blue-circle-greater-than"></span></button></a>
+					<a href="{{ route('dep_atividades', ['id'=>$dependente->id, 'id_atvd'=>3]) }}"><button class="btn blue-circle-button">Com o quê <br> rima?<span class="blue-circle-greater-than"></span></button></a>
 		        </div>   
 			</div>
 
 			<div class="row">
 		        <div class="col-md-12">
-					<a href="{{ route('home') }}" target=""><button class="btn blue-circle-button">Home<span class="blue-circle-greater-than"></span></button></a>
+					<a href="{{ route('tutorial', ['id'=>$dependente->id])}}"><button class="btn blue-circle-button">Tutorial<span class="blue-circle-greater-than"></span></button></a>
 					<a href="{{ route('dependentes.index')}}"><button class="btn blue-circle-button">Voltar<span class="blue-circle-greater-than"></span></button></a>
 				    <a href="{{ route('logout') }}"onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><button class="btn blue-circle-button">Sair<span class="blue-circle-greater-than"></span></button></a>

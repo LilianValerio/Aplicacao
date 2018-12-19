@@ -58,6 +58,14 @@ Route::get('gerenciarDependentes', function () {
 //Route::get('atividades/{id}', function ($id) {
 //   return Redirect::route('atividades.dep_atividade', $id);
 //});
+Route::get('/atividades/iniciais/{id}', 'AtividadeController@dep_atividade');
+
+Route::get('/atividades/{id}', 'AtividadeController@index')->name('atividades');
+Route::get('/atividades/tutorial/{id}', 'AtividadeController@tutorial')->name('tutorial');
+
+
+Route::get('atividades/{id}/{id_atvd}', 'AtividadeController@dep_atividade')->name('dep_atividades');
+
 
 Route::get('/atividades/iniciais/{id}', 'AtividadeController@dep_atividade');
 

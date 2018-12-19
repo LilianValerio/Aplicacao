@@ -13,7 +13,7 @@
 				<div class="logo"></div>
 	<div class="container">
 		<div class="jumbotron-x1">
-		<h1>{{auth()->user()->name}}</h1>
+		<h1>Tela inicial</h1>
 			<div class="row">
 		        <div class="col-md-12">
 				    <a href="#" target=""><button class="btn blue-circle-button">Meus Dados<span class="blue-circle-greater-than"></span></button></a>
@@ -24,7 +24,7 @@
 
 			<div class="row">
 		        <div class="col-md-12">
-				    <button class="btn blue-circle-button">Atividades<span class="blue-circle-greater-than"></span></button>
+				    <a href="tutorial.blade.php"><button class="btn blue-circle-button">Atividades<span class="blue-circle-greater-than"></span></button></a>
 				    <a href="{{ route('logout') }}"onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><button class="btn blue-circle-button">Sair<span class="blue-circle-greater-than"></span></button></a>
 		        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

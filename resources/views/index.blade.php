@@ -14,7 +14,10 @@
 		<div class="container">
 			<div class="jumbotron-300">
 				<h1>Bem vindo ao Lectio!</h1>
-				<p class="text-info recuo">A dislexia é uma dificuldade de aprendizagem caracterizada pela dificuldade na escrita, na fala e no soletrar. Geralmente, é diagnosticada na infância durante o período de alfabetização, embora também possa ser diagnosticado em adultos. O Lectio é um software educativo, baseado em atividades áudio visuais, que pretende auxiliar, profissionais, pais e pacientes, no tratamento de crianças com dislexia.</p>
+				<p class="text-info recuo">Este sistema foi criado para auxiliar no tratamento à crianças com dificuldades de 
+				aprendizado, principalmente as que possuem dislexia. Aqui é possível aprender brincando com algumas atividades
+				divertidas que estimulam o cérebro. Também é possível monitorar o desempenho das crianças através dos resultados
+				das atividades, que são salvos e disponibilizados para consultas através de alguns gráficos.</p>
 			</div><!-- /.jumbotron -->
 		</div>
 

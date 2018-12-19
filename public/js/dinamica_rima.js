@@ -57,7 +57,7 @@ function carrega_pagina() {
     document.getElementById('b2').innerHTML = letraBotao[1];
     document.getElementById('b3').innerHTML = letraBotao[2];
     document.getElementById("result").innerHTML = "";
-
+    document.getElementById("result2").innerHTML = "";
 
 }
 
@@ -70,13 +70,13 @@ function verify() {
     // letras[y]=letraIn;
 
     if (letraIn.toLowerCase() == palavraRimaSort) {
-        document.getElementById("result").innerHTML = "Acertou!!!";
+        document.getElementById("result").innerHTML = "Muito bem! Você acertou!";
         contAcertos += 1;
         } else {
-        document.getElementById("result").innerHTML = "Se enganou, tente novamente!";
+        document.getElementById("result2").innerHTML = "Ah que pena, a palavra que rima com esta é: \'" + palavraRimaSort + "\'";
         contErros += 1;
         }
-    document.getElementById("palavraSemIni").innerHTML = letraIn;
+
     document.getElementById("erros").value = contErros;
     document.getElementById("acertos").value = contAcertos;
 }
@@ -105,10 +105,11 @@ function botao(escolha) {
         contRodadas += 1;
     }else {
         status = 'concluída';
-        document.getElementById("fim").innerHTML = "Muito bem! você Terminou clique em voltar para o painel de atividades!!!";
+        document.getElementById("fim").innerHTML = "Que legal, você terminou clique em voltar para o painel de atividades!!!";
         document.getElementById('proximo').onclick = "disabled";
         document.getElementById('proximo').style.display = 'none';
         document.getElementById("status").value = status;
+        document.getElementById("voltar").innerHTML = "Voltar";
     }
 }
 

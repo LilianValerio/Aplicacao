@@ -1,7 +1,7 @@
 var contAcertos = 0;
 var contErros = 0;
 var rodadas = 5; //delimita a quant de rodadas
-var status = 'abandonada';
+var status = 'interrompida';
 var contRodadas = 1;
 var inicialIn;
 var letraBotao = []; //array para armazenar letras nos botões
@@ -51,7 +51,8 @@ function carrega_pagina() {
     document.getElementById('b2').innerHTML = letraBotao[1];
     document.getElementById('b3').innerHTML = letraBotao[2];
     document.getElementById("result").innerHTML = "";
-
+    document.getElementById("result2").innerHTML = "";
+    document.getElementById("palavraSemIni").style = "text-decoration: none";
 
 }
 
@@ -62,10 +63,11 @@ carrega_pagina();
 function verify() {
 
     if (inicialIn.toLowerCase() == letras[0]) {
-        document.getElementById("result").innerHTML = "Acertou!!!";
+        document.getElementById("result").innerHTML = "Muito bem! Você acertou!";
         contAcertos += 1;
         } else {
-        document.getElementById("result").innerHTML = "Ah que pena, a letra certa é "+ letras[0].toUpperCase();
+        document.getElementById("result2").innerHTML = "Ah que pena, a letra certa é \'"+ letras[0].toUpperCase()+ "\'";
+        document.getElementById("palavraSemIni").style = "text-decoration: line-through";
         contErros += 1;
         }
 
@@ -98,10 +100,11 @@ function botao(escolha) {
         contRodadas += 1;
     }else {
         status = 'concluída';
-        document.getElementById("fim").innerHTML = "Muito bem! você Terminou clique em voltar para o painel de atividades!!!";
+        document.getElementById("fim").innerHTML = "Que legal, você terminou clique em voltar para o painel de atividades!!!";
         document.getElementById('proximo').onclick = "disabled";
         document.getElementById('proximo').style.display = 'none';
         document.getElementById("status").value = status;
+        document.getElementById("voltar").innerHTML = "Voltar";
     }
 }
 

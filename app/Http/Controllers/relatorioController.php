@@ -88,7 +88,7 @@ class relatorioController extends Controller
 
     }
 
-  if($erros1 == null && $acertos1){
+  if($erros1 == null && $acertos1 == null){
     $naoexecutada1 = 1;
   } 
   if($erros2 == null && $acertos2 == null){

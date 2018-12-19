@@ -249,14 +249,14 @@ nav.menu{
         color: orange;
     }
     .logo{
-        background-image: url(../img/LOGO.jpg);
+        background-image: url(../img/LOGO.png);
         background-size: top center;
         background-repeat: no-repeat;
         background-size: 250px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 70px;
-        margin-bottom: 0px;
+        margin-top: 30px;
+        margin-bottom: 100px;
         width: 300px;
         height: 190px;
     }
@@ -634,7 +634,7 @@ textarea.form-control{
         text-shadow: black -1px -1px;
     }
     p{
-        color: #000 !important;
+        /*color: #000 !important;*/
         font-size: 18px;
         font-family: Raleway, Arial, sans-serif, Helvetica;
     }
@@ -739,13 +739,25 @@ textarea.form-control{
 
  #result{
      font-size: 40px;
+     font-family: "Comic Sans MS";
      color: #9400D3;
-     text-shadow: 0px 0px 7px #FFFAFA
+     font-weight: 800;
+     text-shadow: 0px 0px 7px #FFFAFA;
+     color: #2ca02c;
+ }
+
+ #result2{
+     font-size: 40px;
+     font-family: "Comic Sans MS";
+     font-weight: 800;
+     color: #9400D3;
+     text-shadow: 0px 0px 7px #FFFAFA;
+     color: #b92c28;
  }
 
  #fim{
      font-size: 30px;
-     color: #9400D3;
+     color: #0c5460;
      text-shadow: 0px 0px 7px #FFFAFA
  }
 
@@ -783,4 +795,26 @@ textarea.form-control{
      position: absolute;
      top: 56%;
      text-decoration: underline;
+ }
+
+ #b1{
+     color: blue;
+     border-color: green;
+     font-size: xx-large;
+     padding-top: 1px;
+ }
+
+
+ #b2 {
+     color: green;
+     border-color: blue;
+     font-size: xx-large;
+     padding-top: 1px;
+ }
+
+ #b3 {
+     color: #9400D3;
+     border-color: #e0a800;
+     font-size: xx-large;
+     padding-top: 1px;
  }
